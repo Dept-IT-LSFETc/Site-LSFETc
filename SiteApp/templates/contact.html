@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liga ETc</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{% static 'poze/logo.png' %}">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md custom-navbar navbar-light">
+            <div class="container">
+                <a href="/">
+                    <img src="{% static 'poze/logo.png' %}" alt="Logo" class="logo">
+                </a>
+    
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Despre Noi Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="despreNoiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Despre noi
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="despreNoiDropdown">
+                                <li><a class="dropdown-item" href="desprenoi/lsfetc">LSFETc</a></li>
+                                <li><a class="dropdown-item" href="desprenoi/bc">Bc+Cc</a></li>
+                                <li><a class="dropdown-item" href="desprenoi/departamente">Departamente</a></li>
+                                <li><a class="dropdown-item" href="desprenoi/galerie">Galerie</a></li>
+                            </ul>
+                        </li>
+    
+                        <!-- Proiecte Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="proiecteDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Proiecte
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="proiecteDropdown">
+                                <li><a class="dropdown-item" href="/proiecte/esu">ESU</a></li>
+                                <li><a class="dropdown-item" href="/proiecte/exchange">EXCHANGE</a></li>
+                                <li><a class="dropdown-item" href="/proiecte/ftfmm">FTFMM</a></li>
+                                <li><a class="dropdown-item" href="/proiecte/masarotunda">MASA ROTUNDĂ</a></li>
+                                <li><a class="dropdown-item" href="/proiecte/etf">ETF</a></li>
+                            </ul>
+                        </li>
+    
+                        <!-- Anunțuri -->
+                        <li class="nav-item"><a class="nav-link" href="/anunturi">Anunțuri</a></li>
+    
+                        <!-- Informații Utile Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Informații utile
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="infoDropdown">
+                                <li><a class="dropdown-item" href="/informatii/blog">Blog</a></li>
+                                <li><a class="dropdown-item" href="/informatii/studenti-reprezentanti">Studenții Reprezentanți</a></li>
+                                <li><a class="dropdown-item" href="/informatii/documente">Documente</a></li>
+                                <li><a class="dropdown-item" href="/informatii/proiecte-vechi">Proiecte Vechi</a></li>
+                            </ul>
+                        </li>
+    
+                        <!-- FAQ -->
+                        <li class="nav-item"><a class="nav-link" href="/faq">FAQ</a></li>
+    
+                        <!-- Button -->
+                        <li class="nav-item">
+                            <a href="https://forms.office.com/pages/responsepage.aspx?id=5B-0a6NAEEq2zTgnjniyGnmD2U03SgVHiVq-MjlrkaxUQjNNMEJTTUU3VUg1MDdNVEM4SFdTRzQ4MC4u&route=shorturl" class="header-button">
+                                <img src="{% static 'poze/button.png' %}" alt="Button" class="button-img">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="container my-5">
+    <h2 class="text-center fw-bold">Contact</h2>
+    <p class="text-center">
+        <i class="bi bi-geo-alt"></i> B-dul Vasile Pârvan Nr. 2 <br>
+        <i class="bi bi-envelope"></i> <a href="mailto:office@lsfetc.ro">office@lsfetc.ro</a>
+    </p>
+
+    <h3 class="mt-4">Persoane de contact</h3>
+    <div class="contact-grid">
+        {% for contact in contact %}
+        <div class="contact-card">
+            <h4>{{contact.nume}}</h4>
+            <p>{{contact.functia}}</p>
+            <p><i class="bi bi-telephone"></i> {{contact.numar_de_telefon}}</p>
+            <p><i class="bi bi-envelope"></i> {{contact.email}}</p>
+        </div>
+        {% endfor %}
+    </div>
+    </section>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2784.1971817294484!2d21.225181576493213!3d45.74719277107985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47455d8311ce628d%3A0x65ba9560663da490!2sFacultatea%20de%20Inginerie%20Electric%C4%83%20si%20Energetic%C4%83%20-%20Universitatea%20Politehnica%20Timi%C8%99oara!5e0!3m2!1sro!2sro!4v1740950370301!5m2!1sro!2sro" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+    <footer class="footer">
+        <div class="footer-logo-container">
+            <img src="{% static 'poze/logo-white.png' %}" alt="LIGA ETc Logo" class="footer-logo">
+            <div class="footer-social-icons">
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="{% static 'poze/facebook-icon.png' %}" alt="Facebook" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="{% static 'poze/instagram-icon.png' %}" alt="Instagram" class="social-icon">
+                </a>
+                <a href="https://www.tiktok.com" target="_blank">
+                    <img src="{% static 'poze/tiktok-icon.png' %}" alt="TikTok" class="social-icon">
+                </a>
+                <a href="mailto:contact@example.com">
+                    <img src="{% static 'poze/email-icon.png' %}" alt="Email" class="social-icon">
+                </a>
+            </div>
+        </div>
+        <div class="footer-links">
+            <p><a href="/contact">Contact</a></p>
+            <p><a href="https://redirectioneaza.ro/lsfetc/">Donează 3.5</a></p>
+        </div>
+    </footer>
+
+
+</html>
