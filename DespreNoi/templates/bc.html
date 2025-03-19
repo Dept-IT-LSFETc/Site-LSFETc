@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liga ETc</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{% static 'poze/logo.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+        <header>
+            <nav class="navbar navbar-expand-md custom-navbar navbar-light">
+                <div class="container">
+                    <a href="/">
+                        <img src="{% static 'poze/logo.png' %}" alt="Logo" class="logo">
+                    </a>
+        
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+        
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <!-- Despre Noi Dropdown -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="despreNoiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Despre noi
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="despreNoiDropdown">
+                                    <li><a class="dropdown-item" href="lsfetc">LSFETc</a></li>
+                                    <li><a class="dropdown-item" href="bc">Bc+Cc</a></li>
+                                    <li><a class="dropdown-item" href="departamente">Departamente</a></li>
+                                    <li><a class="dropdown-item" href="galerie">Galerie</a></li>
+                                </ul>
+                            </li>
+        
+                            <!-- Proiecte Dropdown -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="proiecteDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Proiecte
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="proiecteDropdown">
+                                    <li><a class="dropdown-item" href="../proiecte/esu">ESU</a></li>
+                                    <li><a class="dropdown-item" href="../proiecte/exchange">EXCHANGE</a></li>
+                                    <li><a class="dropdown-item" href="../proiecte/ftfmm">FTFMM</a></li>
+                                    <li><a class="dropdown-item" href="../proiecte/masarotunda">MASA ROTUNDĂ</a></li>
+                                    <li><a class="dropdown-item" href="../proiecte/etf">ETF</a></li>
+                                </ul>
+                            </li>
+        
+                            <!-- Anunțuri -->
+                            <li class="nav-item"><a class="nav-link" href="../anunturi">Anunțuri</a></li>
+        
+                            <!-- Informații Utile Dropdown -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Informații utile
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="infoDropdown">
+                                    <li><a class="dropdown-item" href="../informatii/blog">Blog</a></li>
+                                    <li><a class="dropdown-item" href="../informatii/studenti-reprezentanti">Studenții Reprezentanți</a></li>
+                                    <li><a class="dropdown-item" href="../informatii/documente">Documente</a></li>
+                                    <li><a class="dropdown-item" href="../informatii/proiecte-vechi">Proiecte Vechi</a></li>
+                                </ul>
+                            </li>
+        
+                            <!-- FAQ -->
+                            <li class="nav-item"><a class="nav-link" href="../faq">FAQ</a></li>
+        
+                            <!-- Button -->
+                            <li class="nav-item">
+                                <a href="YOUR_LINK_HERE" class="header-button">
+                                    <img src="{% static 'poze/button.png' %}" alt="Button" class="button-img">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <section class="hero">
+            {% for poza in poza %}
+            <img src="{{poza.poza.url}}" alt="Liga ETc" class="hero-image">
+            <h1>{{poza.title}}</h1>
+            <h1>{{poza.an}}</h1>
+            {% endfor %}
+        </section>
+
+        
+
+    <div class="container">
+        <h2>Biroul Executiv</h2>
+        <div class="grid-container">
+            {% for bex in bex %}
+            <div class="card">
+                <img src="{{bex.poza.url}}" alt={{bex.title}}>
+                <h3>{{bex.nume}}</h3>
+                <p>{{bex.functia}}</p>
+                <div class="social-icons">
+                    <a href="{{bex.link_facebook}}"><i class="fab fa-facebook"></i></a>
+                    <a href="{{bex.link_instagram}}"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <h2>Coordonatori Departamente</h2>
+        <div class="grid-container">
+            {% for bc in bc %}
+            <div class="card">
+                <img src="{{bc.poza.url}}" alt="{{bc.title}}">
+                <h3>{{bc.nume}}</h3>
+                <p>{{bc.functia}}</p>
+                <div class="social-icons">
+                    <a href="{{bc.link_facebook}}"><i class="fab fa-facebook"></i></a>
+                    <a href="{{bc.link_instagram}}"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <h2>Comisia de Cenzori</h2>
+        <div class="grid-container">
+            {% for cc in cc %}
+            <div class="card">
+                <img src="{{cc.poza.url}}" alt="{{cc.title}}">
+                <h3>{{cc.nume}}</h3>
+                <p>{{cc.functia}}</p>
+                <div class="social-icons">
+                    <a href="{{cc.link_facebook}}"><i class="fab fa-facebook"></i></a>
+                    <a href="{{cc.link_instagram}}"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+    <footer class="footer">
+        <div class="footer-logo-container">
+            <img src="{% static 'poze/logo-white.png' %}" alt="LIGA ETc Logo" class="footer-logo">
+            <div class="footer-social-icons">
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="{% static 'poze/facebook-icon.png' %}" alt="Facebook" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="{% static 'poze/instagram-icon.png' %}" alt="Instagram" class="social-icon">
+                </a>
+                <a href="https://www.tiktok.com" target="_blank">
+                    <img src="{% static 'poze/tiktok-icon.png' %}" alt="TikTok" class="social-icon">
+                </a>
+                <a href="mailto:contact@example.com">
+                    <img src="{% static 'poze/email-icon.png' %}" alt="Email" class="social-icon">
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
