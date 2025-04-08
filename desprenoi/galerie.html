@@ -82,31 +82,235 @@
                 </div>
             </nav>
         </header>
+    <style>
+        /* === GALLERY STYLES === */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    <footer class="footer">
-        <div class="footer-logo-container">
-            <img src="../imagini/logo-white.png" alt="LIGA ETc Logo" class="footer-logo">
-            <div class="footer-social-icons">
-                <a href="https://www.facebook.com" target="_blank">
-                    <img src="../imagini/facebook-icon.png" alt="Facebook" class="social-icon">
-                </a>
-                <a href="https://www.instagram.com" target="_blank">
-                    <img src="../imagini/instagram-icon.png" alt="Instagram" class="social-icon">
-                </a>
-                <a href="https://www.tiktok.com" target="_blank">
-                    <img src="../imagini/tiktok-icon.png" alt="TikTok" class="social-icon">
-                </a>
-                <a href="mailto:contact@example.com">
-                    <img src="../imagini/email-icon.png" alt="Email" class="social-icon">
-                </a>
+        .gallery-item {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* === OVERLAY STYLES === */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlay.active {
+            display: flex;
+        }
+
+        .overlay-image {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .overlay-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 1rem;
+        }
+
+        .overlay-buttons button {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .overlay-buttons button:hover {
+            background: #FFD700;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: #FFD700;
+        }
+
+        /* === MEDIA QUERIES === */
+        @media (max-width: 768px) {
+            .gallery-container {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+
+            .overlay-buttons button, .close-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Basic styling for h2 */
+        h2 {
+            color: #1d2951;
+            font-size: clamp(1.8rem, 5vw, 2.3rem);
+            font-weight: bold;
+            margin: 2rem 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h2>Galerie Foto</h2>
+        <div class="gallery-container">
+            <!-- Replace with your actual image paths -->
+            <div class="gallery-item" data-src="../imagini/poza-1.png">
+                <img src="../imagini/poza-1.png" alt="Photo 1">
+            </div>
+            <div class="gallery-item" data-src="../imagini/banner.jpg">
+                <img src="../imagini/banner.jpg" alt="Photo 2">
+            </div>
+            <div class="gallery-item" data-src="../imagini/slider1.jpg">
+                <img src="../imagini/slider1.jpg" alt="Photo 3">
+            </div>
+            <div class="gallery-item" data-src="../imagini/cospol.png">
+                <img src="../imagini/cospol.png" alt="Photo 4">
+            </div>
+            <div class="gallery-item" data-src="../imagini/fitt.png">
+                <img src="../imagini/fitt.png" alt="Photo 5">
+            </div>
+            <div class="gallery-item" data-src="../imagini/anosr.png">
+                <img src="../imagini/anosr.png" alt="Photo 6">
             </div>
         </div>
-        <div class="footer-links">
-            <p><a href="../contact.html">Contact</a></p>
-            <p><a href="#">Donează 3.5</a></p>
-        </div>
-    </footer>
 
+        <!-- Overlay for enlarged image -->
+        <div class="overlay" id="imageOverlay">
+            <img class="overlay-image" id="overlayImage" src="" alt="Enlarged Image">
+            <div class="overlay-buttons">
+                <button id="prevBtn" aria-label="Previous Image">←</button>
+                <button id="nextBtn" aria-label="Next Image">→</button>
+            </div>
+            <button class="close-btn" id="closeBtn" aria-label="Close Overlay">×</button>
+        </div>
+    </main>
+
+    <script>
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const overlay = document.getElementById('imageOverlay');
+        const overlayImage = document.getElementById('overlayImage');
+        const closeBtn = document.getElementById('closeBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentIndex = 0;
+
+        // Open overlay when clicking an image
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                currentIndex = index;
+                updateOverlayImage();
+                overlay.classList.add('active');
+            });
+        });
+
+        // Close overlay
+        closeBtn.addEventListener('click', () => {
+            overlay.classList.remove('active');
+        });
+
+        // Navigate to previous image
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+            updateOverlayImage();
+        });
+
+        // Navigate to next image
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % galleryItems.length;
+            updateOverlayImage();
+        });
+
+        // Update the overlay image source
+        function updateOverlayImage() {
+            const src = galleryItems[currentIndex].getAttribute('data-src');
+            overlayImage.src = src;
+        }
+
+        // Close overlay when clicking outside the image
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) {
+                overlay.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+<footer class="footer">
+    <div class="footer-logo-container">
+        <img src="../imagini/logo-white.png" alt="LIGA ETc Logo" class="footer-logo">
+        <div class="footer-social-icons">
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="../imagini/facebook-icon.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="../imagini/instagram-icon.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.tiktok.com" target="_blank">
+                <img src="../imagini/tiktok-icon.png" alt="TikTok" class="social-icon">
+            </a>
+            <a href="mailto:contact@example.com">
+                <img src="../imagini/email-icon.png" alt="Email" class="social-icon">
+            </a>
+        </div>
+    </div>
+    <div class="footer-links">
+        <p><a href="../contact.html">Contact</a></p>
+        <p><a href="#">Donează 3.5</a></p>
+    </div>
+</footer>
 </body>
 
 </html>
