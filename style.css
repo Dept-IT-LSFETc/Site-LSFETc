@@ -696,6 +696,17 @@ nav ul li a {
 @media (max-width: 768px) {
     .gallery-container {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+
+    .gallery-item img {
+        height: 150px;
+    }
+
+    .overlay-image {
+        max-width: 85%;
+        max-height: 70vh;
     }
 
     .overlay-buttons button, .close-btn {
@@ -782,6 +793,31 @@ nav ul li a {
 
 /* For very small screens (e.g., phones < 576px) */
 @media (max-width: 576px) {
+    .gallery-container {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .gallery-item img {
+        height: 120px;
+    }
+
+    .overlay-image {
+        max-width: 90%;
+        max-height: 60vh;
+    }
+
+    .overlay-buttons button, .close-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+
+    .overlay-buttons {
+        padding: 0 0.5rem;
+    }
+
     .departments-container {
         grid-template-columns: 1fr; /* Stack cards vertically */
         gap: 10px;
