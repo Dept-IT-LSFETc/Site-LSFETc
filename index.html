@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="ro">
-
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,24 +10,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<div id="loader">
-    <div class="spinner"></div>
-    <div class="loader-text">Liga ETc</div>
-  </div>
-
 <body>
+    <div id="loader">
+        <div class="spinner"></div>
+        <div class="loader-text">Liga ETc</div>
+    </div>
+
     <header>
         <nav class="navbar navbar-expand-md custom-navbar navbar-light">
             <div class="container">
                 <a href="index.html">
                     <img src="imagini/logo.png" alt="Logo" class="logo">
                 </a>
-    
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-    
+                <div class="navbar-right">
+                    <div class="header-button-container">
+                        <a href="https://forms.office.com/pages/responsepage.aspx?id=5B-0a6NAEEq2zTgnjniyGnmD2U03SgVHiVq-MjlrkaxUQjNNMEJTTUU3VUg1MDdNVEM4SFdTRzQ4MC4u&route=shorturl" class="header-button">
+                            <img src="imagini/button.png" alt="Button" class="button-img">
+                        </a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <!-- Despre Noi Dropdown -->
@@ -45,24 +46,21 @@
                                 <li><a class="dropdown-item" href="desprenoi/galerie.html">Galerie</a></li>
                             </ul>
                         </li>
-    
                         <!-- Proiecte Dropdown -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="proiecteDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Proiecte
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="proiecteDropdown">
-                              <li><a class="dropdown-item" href="https://esu.lsfetc.ro">ESU</a></li>
-                              <li><a class="dropdown-item" href="#">EXCHANGE</a></li>
-                              <li><a class="dropdown-item" href="#">FTFMM</a></li>
-                              <li><a class="dropdown-item" href="#">MASA ROTUNDĂ</a></li>
-                              <li><a class="dropdown-item" href="#">ETF</a></li>
-                          </ul>
+                                <li><a class="dropdown-item" href="https://esu.lsfetc.ro">ESU</a></li>
+                                <li><a class="dropdown-item" href="#">EXCHANGE</a></li>
+                                <li><a class="dropdown-item" href="#">FTFMM</a></li>
+                                <li><a class="dropdown-item" href="#">MASA ROTUNDĂ</a></li>
+                                <li><a class="dropdown-item" href="#">ETF</a></li>
+                            </ul>
                         </li>
-    
                         <!-- Anunțuri -->
                         <li class="nav-item"><a class="nav-link" href="anunturi.html">Anunțuri</a></li>
-    
                         <!-- Informații Utile Dropdown -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -75,12 +73,10 @@
                                 <li><a class="dropdown-item" href="informatii/proiectevechi.html">Proiecte Vechi</a></li>
                             </ul>
                         </li>
-    
                         <!-- FAQ -->
                         <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-    
                         <!-- Button -->
-                        <li class="nav-item">
+                        <li class="nav-item header-button-mobile-hidden">
                             <a href="https://forms.office.com/pages/responsepage.aspx?id=5B-0a6NAEEq2zTgnjniyGnmD2U03SgVHiVq-MjlrkaxUQjNNMEJTTUU3VUg1MDdNVEM4SFdTRzQ4MC4u&route=shorturl" class="header-button">
                                 <img src="imagini/button.png" alt="Button" class="button-img">
                             </a>
@@ -91,24 +87,24 @@
         </nav>
     </header>
 
-
-    
-
     <div class="header-container">
         <img class="header-image" src="imagini/banner.jpg" alt="Hero Image">
         <div class="overlay-header">
-            <div class="overlay-text">Liga Studentilor din Facultatea de Electronica si Telecomunicatii</div>
+            <div class="overlay-text">Liga Studenților din Facultatea de Electronică și Telecomunicații</div>
         </div>
     </div>
-
 
     <div class="container text-center my-5 mt-5">
         <div class="row d-flex align-items-center">
             <div class="col-md-6 text-center mb-3 mb-md-0">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                <p>Liga Studenților din Facultatea de Electronică și Telecomunicații
+                  este o organizație non-guvernamentală ce are ca scop inserția pe
+                  piața muncii și reprezentarea studenților din Facultatea de
+                  Electronică, Telecomunicații și Tehnologii Informaționale la nivel
+                  universitar, local, județean și național.</p>
             </div>
-            <div class="col-md-6"><br><br><br><br>
-                <img src="imagini/poza-1.png" class="d-block w-100 img-fluid rounded" alt="Photo 1"><br><br><br><br>
+            <div class="col-md-6">
+                <img src="imagini/poza-1.png" class="d-block w-100 img-fluid rounded" alt="Photo 1">
             </div>
         </div>
     </div>
@@ -160,95 +156,78 @@
         </div>
     </div>
 
-    <br><br>
-
-  
-
     <section class="container mt-5">
         <h2 class="text-primary mb-4">Testimoniale</h2>
-      
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-      
-            <!-- Slide 1 -->
-            <div class="carousel-item active">
-              <div class="row justify-content-center">
-                <div class="col-md-4 d-flex justify-content-center">
-                  <div class="card testimonial-card text-center shadow p-4">
-                    <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mb-3" alt="Student 1">
-                    <p class="card-text">"A fost o experiență grozavă!"</p>
-                    <h5 class="card-title mt-2">Andrei Popescu</h5>
-                    <p class="text-muted">Student</p>
-                  </div>
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 d-flex justify-content-center">
+                            <div class="card testimonial-card text-center shadow p-4">
+                                <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mb-3" alt="Student 1">
+                                <p class="card-text">"A fost o experiență grozavă!"</p>
+                                <h5 class="card-title mt-2">Andrei Popescu</h5>
+                                <p class="text-muted">Student</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 d-flex justify-content-center">
+                            <div class="card testimonial-card text-center shadow p-4">
+                                <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mb-3" alt="Student 2">
+                                <p class="card-text">"Mi-a plăcut modul de predare și susținerea profesorilor."</p>
+                                <h5 class="card-title mt-2">Ioana Georgescu</h5>
+                                <p class="text-muted">Student</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 d-flex justify-content-center">
+                            <div class="card testimonial-card text-center shadow p-4">
+                                <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mb-3" alt="Student 3">
+                                <p class="card-text">"Recomand cu încredere tuturor celor interesați!"</p>
+                                <h5 class="card-title mt-2">Mihai Ionescu</h5>
+                                <p class="text-muted">Absolvent</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4 d-flex justify-content-center">
-                  <div class="card testimonial-card text-center shadow p-4">
-                    <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mb-3" alt="Student 2">
-                    <p class="card-text">"Mi-a plăcut modul de predare și susținerea profesorilor."</p>
-                    <h5 class="card-title mt-2">Ioana Georgescu</h5>
-                    <p class="text-muted">Student</p>
-                  </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 d-flex justify-content-center">
+                            <div class="card testimonial-card text-center shadow p-4">
+                                <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mb-3" alt="Student 4">
+                                <p class="card-text">"Profesorii sunt foarte implicați."</p>
+                                <h5 class="card-title mt-2">Elena Dobre</h5>
+                                <p class="text-muted">Student</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 d-flex justify-content-center">
+                            <div class="card testimonial-card text-center shadow p-4">
+                                <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mb-3" alt="Student 5">
+                                <p class="card-text">"Mediul de învățare este excelent!"</p>
+                                <h5 class="card-title mt-2">Vlad Marinescu</h5>
+                                <p class="text-muted">Student</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 d-flex justify-content-center">
+                            <div class="card testimonial-card text-center shadow p-4">
+                                <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mb-3" alt="Student 6">
+                                <p class="card-text">"Am legat prietenii frumoase aici."</p>
+                                <h5 class="card-title mt-2">Cristina Ilie</h5>
+                                <p class="text-muted">Studentă</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4 d-flex justify-content-center">
-                  <div class="card testimonial-card text-center shadow p-4">
-                    <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mb-3" alt="Student 3">
-                    <p class="card-text">"Recomand cu încredere tuturor celor interesați!"</p>
-                    <h5 class="card-title mt-2">Mihai Ionescu</h5>
-                    <p class="text-muted">Absolvent</p>
-                  </div>
-                </div>
-              </div>
             </div>
-      
-            <!-- Slide 2 -->
-            <div class="carousel-item">
-              <div class="row justify-content-center">
-                <div class="col-md-4 d-flex justify-content-center">
-                  <div class="card testimonial-card text-center shadow p-4">
-                    <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mb-3" alt="Student 4">
-                    <p class="card-text">"Profesorii sunt foarte implicați."</p>
-                    <h5 class="card-title mt-2">Elena Dobre</h5>
-                    <p class="text-muted">Student</p>
-                  </div>
-                </div>
-                <div class="col-md-4 d-flex justify-content-center">
-                  <div class="card testimonial-card text-center shadow p-4">
-                    <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mb-3" alt="Student 5">
-                    <p class="card-text">"Mediul de învățare este excelent!"</p>
-                    <h5 class="card-title mt-2">Vlad Marinescu</h5>
-                    <p class="text-muted">Student</p>
-                  </div>
-                </div>
-                <div class="col-md-4 d-flex justify-content-center">
-                  <div class="card testimonial-card text-center shadow p-4">
-                    <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mb-3" alt="Student 6">
-                    <p class="card-text">"Am legat prietenii frumoase aici."</p>
-                    <h5 class="card-title mt-2">Cristina Ilie</h5>
-                    <p class="text-muted">Studentă</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-      
-          </div>
-      
-          <!-- Carousel Controls -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          </button>
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
         </div>
-      </section>
-      
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-
-
-      
-<br>
-<br>
-<br>  
+    </section>
 
     <footer class="footer">
         <div class="footer-logo-container">
@@ -274,6 +253,7 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
         window.addEventListener('load', () => {
           setTimeout(() => {
@@ -283,6 +263,5 @@
           }, 2500); // Loader duration before fade
         });
       </script>
-
-
+</body>
 </html>

@@ -5,85 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liga ETc</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="../imagini/logo.png">
+    <link rel="icon" type="image/x-icon" href="imagini/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+    <div id="loader">
+        <div class="spinner"></div>
+        <div class="loader-text">Liga ETc</div>
+    </div>
 
-        <header>
-            <nav class="navbar navbar-expand-md custom-navbar navbar-light">
-                <div class="container">
-                    <a href="../index.html">
-                        <img src="../imagini/logo.png" alt="Logo" class="logo">
-                    </a>
-        
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <header>
+        <nav class="navbar navbar-expand-md custom-navbar navbar-light">
+            <div class="container">
+                <a href="index.html">
+                    <img src="imagini/logo.png" alt="Logo" class="logo">
+                </a>
+                <div class="navbar-right">
+                    <div class="header-button-container">
+                        <a href="https://forms.office.com/pages/responsepage.aspx?id=5B-0a6NAEEq2zTgnjniyGnmD2U03SgVHiVq-MjlrkaxUQjNNMEJTTUU3VUg1MDdNVEM4SFdTRzQ4MC4u&route=shorturl" class="header-button">
+                            <img src="imagini/button.png" alt="Button" class="button-img">
+                        </a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-        
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
-                            <!-- Despre Noi Dropdown -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="despreNoiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Despre noi
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="despreNoiDropdown">
-                                    <li><a class="dropdown-item" href="../desprenoi/lsfetc.html">LSFETc</a></li>
-                                    <li><a class="dropdown-item" href="../desprenoi/bc.html">Bc+Cc</a></li>
-                                    <li><a class="dropdown-item" href="../desprenoi/departamente.html">Departamente</a></li>
-                                    <li><a class="dropdown-item" href="../desprenoi/galerie.html">Galerie</a></li>
-                                </ul>
-                            </li>
-        
-                            <!-- Proiecte Dropdown -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="proiecteDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Proiecte
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="proiecteDropdown">
-                                    <li><a class="dropdown-item" href="../Proiecte/esu.html">ESU</a></li>
-                                    <li><a class="dropdown-item" href="../Proiecte/exchange.html">EXCHANGE</a></li>
-                                    <li><a class="dropdown-item" href="../Proiecte/ftfmm.html">FTFMM</a></li>
-                                    <li><a class="dropdown-item" href="../Proiecte/masarotunda.html">MASA ROTUNDĂ</a></li>
-                                    <li><a class="dropdown-item" href="../Proiecte/etf.html">ETF</a></li>
-                                    <li><a class="dropdown-item" href="../Proiecte/new.html">NEW</a></li>
-                                </ul>
-                            </li>
-        
-                            <!-- Anunțuri -->
-                            <li class="nav-item"><a class="nav-link" href="../anunturi.html">Anunțuri</a></li>
-        
-                            <!-- Informații Utile Dropdown -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Informații utile
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="infoDropdown">
-                                    <li><a class="dropdown-item" href="../informatii/blog.html">Blog</a></li>
-                                    <li><a class="dropdown-item" href="../informatii/studentii.html">Studenții Reprezentanți</a></li>
-                                    <li><a class="dropdown-item" href="../informatii/documente.html">Documente</a></li>
-                                    <li><a class="dropdown-item" href="../informatii/proiectevechi.html">Proiecte Vechi</a></li>
-                                </ul>
-                            </li>
-        
-                            <!-- FAQ -->
-                            <li class="nav-item"><a class="nav-link" href="../faq.html">FAQ</a></li>
-        
-                            <!-- Button -->
-                            <li class="nav-item">
-                                <a href="https://forms.office.com/pages/responsepage.aspx?id=5B-0a6NAEEq2zTgnjniyGnmD2U03SgVHiVq-MjlrkaxUQjNNMEJTTUU3VUg1MDdNVEM4SFdTRzQ4MC4u&route=shorturl" class="header-button">
-                                    <img src="../imagini/button.png" alt="Button" class="button-img">
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
-            </nav>
-        </header>
-
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Despre Noi Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="despreNoiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Despre noi
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="despreNoiDropdown">
+                                <li><a class="dropdown-item" href="desprenoi/lsfetc.html">LSFETc</a></li>
+                                <li><a class="dropdown-item" href="desprenoi/bc.html">Bc+Cc</a></li>
+                                <li><a class="dropdown-item" href="desprenoi/departamente.html">Departamente</a></li>
+                                <li><a class="dropdown-item" href="desprenoi/galerie.html">Galerie</a></li>
+                            </ul>
+                        </li>
+                        <!-- Proiecte Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="proiecteDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Proiecte
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="proiecteDropdown">
+                                <li><a class="dropdown-item" href="https://esu.lsfetc.ro">ESU</a></li>
+                                <li><a class="dropdown-item" href="#">EXCHANGE</a></li>
+                                <li><a class="dropdown-item" href="#">FTFMM</a></li>
+                                <li><a class="dropdown-item" href="#">MASA ROTUNDĂ</a></li>
+                                <li><a class="dropdown-item" href="#">ETF</a></li>
+                            </ul>
+                        </li>
+                        <!-- Anunțuri -->
+                        <li class="nav-item"><a class="nav-link" href="anunturi.html">Anunțuri</a></li>
+                        <!-- Informații Utile Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Informații utile
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="infoDropdown">
+                                <li><a class="dropdown-item" href="informatii/blog.html">Blog</a></li>
+                                <li><a class="dropdown-item" href="informatii/studentii.html">Studenții Reprezentanți</a></li>
+                                <li><a class="dropdown-item" href="informatii/documente.html">Documente</a></li>
+                                <li><a class="dropdown-item" href="informatii/proiectevechi.html">Proiecte Vechi</a></li>
+                            </ul>
+                        </li>
+                        <!-- FAQ -->
+                        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                        <!-- Button -->
+                        <li class="nav-item header-button-mobile-hidden">
+                            <a href="https://forms.office.com/pages/responsepage.aspx?id=5B-0a6NAEEq2zTgnjniyGnmD2U03SgVHiVq-MjlrkaxUQjNNMEJTTUU3VUg1MDdNVEM4SFdTRzQ4MC4u&route=shorturl" class="header-button">
+                                <img src="imagini/button.png" alt="Button" class="button-img">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
         
 <body>
     

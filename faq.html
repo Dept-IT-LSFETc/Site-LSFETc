@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ro">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,19 +11,23 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body>
+
     <header>
         <nav class="navbar navbar-expand-md custom-navbar navbar-light">
             <div class="container">
                 <a href="index.html">
                     <img src="imagini/logo.png" alt="Logo" class="logo">
                 </a>
-    
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-    
+                <div class="navbar-right">
+                    <div class="header-button-container">
+                        <a href="https://forms.office.com/pages/responsepage.aspx?id=5B-0a6NAEEq2zTgnjniyGnmD2U03SgVHiVq-MjlrkaxUQjNNMEJTTUU3VUg1MDdNVEM4SFdTRzQ4MC4u&route=shorturl" class="header-button">
+                            <img src="imagini/button.png" alt="Button" class="button-img">
+                        </a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <!-- Despre Noi Dropdown -->
@@ -39,7 +42,6 @@
                                 <li><a class="dropdown-item" href="desprenoi/galerie.html">Galerie</a></li>
                             </ul>
                         </li>
-    
                         <!-- Proiecte Dropdown -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="proiecteDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -53,10 +55,8 @@
                                 <li><a class="dropdown-item" href="#">ETF</a></li>
                             </ul>
                         </li>
-    
                         <!-- Anunțuri -->
                         <li class="nav-item"><a class="nav-link" href="anunturi.html">Anunțuri</a></li>
-    
                         <!-- Informații Utile Dropdown -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -69,12 +69,10 @@
                                 <li><a class="dropdown-item" href="informatii/proiectevechi.html">Proiecte Vechi</a></li>
                             </ul>
                         </li>
-    
                         <!-- FAQ -->
                         <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-    
                         <!-- Button -->
-                        <li class="nav-item">
+                        <li class="nav-item header-button-mobile-hidden">
                             <a href="https://forms.office.com/pages/responsepage.aspx?id=5B-0a6NAEEq2zTgnjniyGnmD2U03SgVHiVq-MjlrkaxUQjNNMEJTTUU3VUg1MDdNVEM4SFdTRzQ4MC4u&route=shorturl" class="header-button">
                                 <img src="imagini/button.png" alt="Button" class="button-img">
                             </a>
@@ -84,7 +82,6 @@
             </div>
         </nav>
     </header>
-
     <footer class="footer">
         <div class="footer-logo-container">
             <img src="imagini/logo-white.png" alt="LIGA ETc Logo" class="footer-logo">
@@ -109,6 +106,7 @@
         </div>
     </footer>
 
-</body>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
