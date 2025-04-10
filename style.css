@@ -843,3 +843,234 @@ nav ul li a {
         line-height: 1.3;
     }
 }
+
+.stat-number {
+    background-color: #004080; /* dark blue, you can change it */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.stat-number {
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+}
+
+/* ESU page */
+.page-esu .stat-number {
+    background-color: #007bff; /* Blue */
+}
+
+/* Exchange page */
+.page-exchange .stat-number {
+    background-color: #28a745; /* Green */
+}
+
+/* FTFMM page */
+.page-ftfmm .stat-number {
+    background-color: #ffc107; /* Yellow */
+}
+
+/* MASA ROTUNDĂ page */
+.page-masarotunda .stat-number {
+    background-color: #dc3545; /* Red */
+}
+
+/* ETF page */
+.page-etf .stat-number {
+    background-color: #6f42c1; /* Purple */
+}
+
+.page-new .stat-number {
+    background-color: #6f42c1; /* Purple */
+}
+
+.page-new .stat-number {
+    background-color: #6f42c1; /* Purple */
+}
+
+@media (max-width: 768px) {
+    .stat-number {
+      font-size: 1.5rem;
+    }
+  
+    .testimonial-card {
+      margin-bottom: 1.5rem;
+    }
+  
+    .text-start {
+      text-align: center !important;
+    }
+  }
+  
+  .testimonial-card img {
+    width: 80px;
+    height: 80px;
+  }
+
+  
+  .doc-button {
+    background-color: #21295c;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    display: block;
+  }
+  .doc-button:hover {
+    background-color: #1a204a;
+    text-decoration: none;
+    color: white;
+  }
+  .section-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .old-projects-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.old-projects-section h1 {
+    color: #1d2951;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+/* Container for project cards */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Individual project card */
+.project-card {
+    position: relative; /* For positioning the mask and text */
+    background-color: #26346D; /* Fallback background color */
+    background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80'); /* Placeholder background image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ensure the mask doesn't overflow */
+}
+
+/* Semi-transparent mask using ::before */
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(38, 52, 109, 0.8); /* Dark blue mask with 80% opacity */
+    z-index: 1; /* Place the mask above the background image */
+}
+
+/* Hover effect for the card */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Ensure text is above the mask */
+.project-card h2,
+.project-card p {
+    position:relative;
+    z-index: 2; /* Place text above the mask */
+}
+
+.project-card h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.project-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: 1fr; /* Stack cards vertically on smaller screens */
+    }
+
+    .old-projects-section h1 {
+        font-size: 2rem;
+    }
+
+    .project-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .project-card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .old-projects-section {
+        padding: 0 10px;
+    }
+
+    .old-projects-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .project-card {
+        padding: 15px;
+    }
+
+    .project-card h2 {
+        font-size: 1.3rem;
+    }
+
+    .project-card p {
+        font-size: 0.85rem;
+    }
+}
+.studenti-repre {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(12, 300px); /* 12 rows, fixed height for consistency */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+/* Ensure headings span the entire grid width */
+.studenti-repre h2 {
+    grid-column: 1 / -1; /* Span all columns */
+    margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    .studenti-repre {
+        grid-template-columns: 1fr; /* Stack cards vertically on smaller screens */
+        grid-template-rows: auto; /* Let rows adjust to content */
+    }
+}

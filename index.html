@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body class="page-index">
     <div id="loader">
         <div class="spinner"></div>
         <div class="loader-text">Liga ETc</div>
@@ -87,10 +87,15 @@
         </nav>
     </header>
 
-    <div class="header-container">
-        <img class="header-image" src="imagini/banner.jpg" alt="Hero Image">
-        <div class="overlay-header">
-            <div class="overlay-text">Liga Studenților din Facultatea de Electronică și Telecomunicații</div>
+    <div class="position-relative">
+        <img src="imagini/banner.jpg" class="img-fluid w-100" alt="Photo 1">
+        
+        <!-- Mask overlay -->
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+        
+        <!-- Text content -->
+        <div class="position-absolute top-50 start-50 translate-middle text-white text-center" style="z-index: 2;">
+            <h1 class="fw-bold">Liga Studenților din Facultatea de Electronică și Telecomunicații</h1>
         </div>
     </div>
 

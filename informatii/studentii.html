@@ -2,7 +2,7 @@
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Liga ETc</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../imagini/logo.png">
@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
-
-
     <header>
         <nav class="navbar navbar-expand-md custom-navbar navbar-light">
             <div class="container">
@@ -82,31 +80,241 @@
             </div>
         </nav>
     </header>
-    <footer class="footer">
-        <div class="footer-logo-container">
-            <img src="../imagini/logo-white.png" alt="LIGA ETc Logo" class="footer-logo">
-            <div class="footer-social-icons">
-                <a href="https://www.facebook.com" target="_blank">
-                    <img src="../imagini/facebook-icon.png" alt="Facebook" class="social-icon">
-                </a>
-                <a href="https://www.instagram.com" target="_blank">
-                    <img src="../imagini/instagram-icon.png" alt="Instagram" class="social-icon">
-                </a>
-                <a href="https://www.tiktok.com" target="_blank">
-                    <img src="../imagini/tiktok-icon.png" alt="TikTok" class="social-icon">
-                </a>
-                <a href="mailto:contact@example.com">
-                    <img src="../imagini/email-icon.png" alt="Email" class="social-icon">
-                </a>
+    <style>
+        /* Base styles for the section */
+        /* New studenti-repre class for the 3x12 grid */
+        .studenti-repre {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 3 columns */
+            grid-template-rows: repeat(8, 300px); /* 12 rows, fixed height for consistency */
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            justify-items: center;
+        }
+
+        /* Ensure headings span the entire grid width */
+        .studenti-repre h2 {
+            grid-column: 1 / -1; /* Span all columns */
+            margin: 1rem 0;
+        }
+
+        /* Card styles (from your existing style.css) */
+        .cardbc, .card {
+            background-color: white;
+            border: 2px solid #1d2951;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .cardbc:hover, .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+        }
+
+        .cardbc img, .card img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid #26346D;
+        }
+
+        .cardbc h3, .card h3 {
+            font-size: 1.2rem;
+            color: #1d2951;
+            margin: 10px 0 5px;
+        }
+
+        .cardbc p, .card p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* Social icons (from your existing style.css) */
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            color: #1d2951;
+            font-size: 1.2rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #FFD700;
+            transform: scale(1.2);
+        }
+
+        /* Responsive adjustments for studenti-repre */
+        @media (max-width: 768px) {
+            .studenti-repre {
+                grid-template-columns: 1fr; /* Stack cards vertically on smaller screens */
+                grid-template-rows: auto; /* Let rows adjust to content */
+            }
+
+            .cardbc, .card {
+                padding: 15px;
+            }
+
+            .cardbc img, .card img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .cardbc h3, .card h3 {
+                font-size: 1.1rem;
+            }
+
+            .cardbc p, .card p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 10px;
+            }
+
+            .container h1 {
+                font-size: 2rem;
+            }
+
+            .container h2 {
+                font-size: 1.8rem;
+            }
+
+            .cardbc img, .card img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .cardbc h3, .card h3 {
+                font-size: 1rem;
+            }
+
+            .cardbc p, .card p {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Studenți reprezentanți</h1>
+
+        <div class="studenti-repre">
+            <h2>Senatul Universității</h2>
+            <div class="cardbc">
+                <img src="../imagini/bc+cc/Georgi.png" alt="Georgiana Knobloch">
+                <h3>Knobloch Georgiana</h3>
+                <p>Președinte</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/georgiana.knobloch"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/georgiana.lariisa/"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
             </div>
-        </div>
-        <div class="footer-links">
-            <p><a href="../contact.html">Contact</a></p>
-            <p><a href="#">Donează 3.5</a></p>
-        </div>
-    </footer>
+            <div class="cardbc">
+                <img src="../imagini/bc+cc/Vladu.png" alt="Cristina Vladu">
+                <h3>Vladu Cristina</h3>
+                <p>Vicepreședinte Reprezentare</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/vladu.cristinaa"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/_vladucristina_/"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
 
+            <!-- Empty cell to maintain 3x12 structure -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+            <h2>Consiliul Facultății</h2>
+            <div class="card">
+                <img src="../imagini/bc+cc/Alesio.png" alt="Alesio Tanase">
+                <h3>Tanase Alesio</h3>
+                <p>Coordonatorul Departamentului Reprezentare</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/alesio.tanase"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/alesio_tanase/"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="../imagini/bc+cc/Teo.png" alt="Teodora Catana">
+                <h3>Catana Teodora</h3>
+                <p>Coordonatorul Departamentului Fundraising</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/teodoraanamaria.catana.3"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/teo.maria03/"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <!-- Empty cell to maintain 3x12 structure -->
+            <div class="card" style="visibility: hidden;"></div>
+
+            <h2>Reprezentanți de an</h2>
+            <div class="card">
+                <img src="../imagini/bc+cc/Toni.png" alt="Antoniu Cecan">
+                <h3>Cecan Antoniu</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="../imagini/bc+cc/Draga.png" alt="Alexandru Draga">
+                <h3>Draga Alexandru</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <!-- Empty cells to fill the remaining 3x12 grid (6 cards currently, need 36 total cells) -->
+            <div class="card" style="visibility: hidden;"></div>
+        </div>
+    </div>
 </body>
+<footer class="footer">
+    <div class="footer-logo-container">
+        <img src="../imagini/logo-white.png" alt="LIGA ETc Logo" class="footer-logo">
+        <div class="footer-social-icons">
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="../imagini/facebook-icon.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="../imagini/instagram-icon.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.tiktok.com" target="_blank">
+                <img src="../imagini/tiktok-icon.png" alt="TikTok" class="social-icon">
+            </a>
+            <a href="mailto:contact@example.com">
+                <img src="../imagini/email-icon.png" alt="Email" class="social-icon">
+            </a>
+        </div>
+    </div>
+    <div class="footer-links">
+        <p><a href="../contact.html">Contact</a></p>
+        <p><a href="#">Donează 3.5</a></p>
+    </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
 </html>
