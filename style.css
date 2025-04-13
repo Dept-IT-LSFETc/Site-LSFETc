@@ -248,9 +248,9 @@ nav ul li a {
 /* === DEPARTMENTS SECTION === */
 .departments-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    max-width: 1000px;
+    max-width: 10000px;
     margin: 40px auto;
     padding: 20px;
 }
@@ -265,8 +265,8 @@ nav ul li a {
 }
 
 .department-card img {
-    width: 80px;
-    height: 80px;
+    width: 150px;
+    height: 150px;
     object-fit: contain;
     margin-bottom: 15px;
     background-color: white;
@@ -1298,5 +1298,233 @@ nav ul li a {
     .index-page .org-card a {
         font-size: 0.8rem;
         padding: 5px 8px;
+    }
+}
+
+/* Shapes Container */
+.shapes-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background:transparent;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Place shapes behind the content */
+}
+
+/* General Shape Styling */
+.shape {
+    position: absolute;
+}
+
+/* Colors for Shapes */
+.yellow-shape {
+    background-color: #FFC107; /* Yellow color matching the reference image */
+    opacity: 1;
+}
+
+.blue-shape {
+    background-color: #1E88E5; /* Blue color matching the reference image */
+    opacity: 1;
+}
+
+/* Shape 1: Top-left yellow shape */
+/* Shape 1: Top-left yellow shape */
+.shape1 {
+    width: 400px; /* Increased from 300px */
+    height: 400px; /* Increased from 300px */
+    top: -50px;
+    left: -50px;
+    clip-path: polygon(
+        10% 10%,  /* Top-left corner with curve */
+        40% 5%,   /* Slight dip for asymmetry */
+        70% 20%,  /* Rounded top-right curve */
+        90% 50%,  /* Right side curve */
+        70% 80%,  /* Bottom-right curve */
+        30% 90%,  /* Bottom-left curve */
+        10% 60%   /* Left side curve */
+    );
+}
+
+/* Shape 2: Top-right blue shape */
+.shape2 {
+    width: 350px; /* Increased from 250px */
+    height: 350px; /* Increased from 250px */
+    top: -30px;
+    right: -30px;
+    clip-path: polygon(
+        30% 10%,  /* Top-left curve */
+        60% 0%,   /* Top curve with asymmetry */
+        90% 30%,  /* Top-right curve */
+        80% 70%,  /* Right side curve */
+        50% 90%,  /* Bottom curve */
+        20% 80%,  /* Bottom-left curve */
+        10% 40%   /* Left side curve */
+    );
+}
+
+/* Shape 3: Middle-left yellow shape */
+.shape3 {
+    width: 300px; /* Increased from 200px */
+    height: 300px; /* Increased from 200px */
+    top: 50%;
+    left: -40px;
+    clip-path: polygon(
+        15% 20%,  /* Top-left curve */
+        50% 10%,  /* Top curve with asymmetry */
+        80% 30%,  /* Top-right curve */
+        90% 60%,  /* Right side curve */
+        60% 90%,  /* Bottom-right curve */
+        20% 80%,  /* Bottom-left curve */
+        5% 50%    /* Left side curve */
+    );
+}
+
+/* Shape 4: Bottom-right blue shape */
+.shape4 {
+    width: 450px; /* Increased from 350px */
+    height: 450px; /* Increased from 350px */
+    bottom: -70px;
+    right: -70px;
+    clip-path: polygon(
+        25% 15%,  /* Top-left curve */
+        60% 5%,   /* Top curve with asymmetry */
+        85% 25%,  /* Top-right curve */
+        95% 55%,  /* Right side curve */
+        70% 85%,  /* Bottom-right curve */
+        40% 95%,  /* Bottom curve */
+        10% 65%   /* Left side curve */
+    );
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .shape1, .shape2, .shape3, .shape4 {
+        transform: scale(0.7); /* Keep the scaling for smaller screens */
+    }
+
+    .shape1 {
+        width: 400px; /* Ensure the base size is updated */
+        height: 400px;
+        top: -30px;
+        left: -30px;
+    }
+
+    .shape2 {
+        width: 350px;
+        height: 350px;
+        top: -20px;
+        right: -20px;
+    }
+
+    .shape3 {
+        width: 300px;
+        height: 300px;
+        left: -20px;
+    }
+
+    .shape4 {
+        width: 450px;
+        height: 450px;
+        bottom: -50px;
+        right: -50px;
+    }
+}
+
+/* === DEPARTMENTS SECTION === */
+.departments-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.department-card {
+    background-color: #0c2c6b;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    border: 3px solid gold;
+}
+
+.department-card img {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.department-card h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.department-card p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .departments-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .department-card {
+        padding: 15px;
+    }
+
+    .department-card img {
+        width: 60px;
+        height: 60px;
+        padding: 8px;
+    }
+
+    .department-card h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .department-card p {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+}
+
+/* For very small screens (e.g., phones < 576px) */
+@media (max-width: 576px) {
+    .departments-container {
+        grid-template-columns: 1fr; /* Stack cards vertically */
+        gap: 10px;
+    }
+
+    .department-card {
+        padding: 10px;
+    }
+
+    .department-card img {
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+    }
+
+    .department-card h3 {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .department-card p {
+        font-size: 11px;
+        line-height: 1.3;
     }
 }
