@@ -1074,3 +1074,229 @@ nav ul li a {
         grid-template-rows: auto; /* Let rows adjust to content */
     }
 }
+
+/* === ORGANIZATIONS === */
+.organizations {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px; /* Reduced gap for better spacing on mobile */
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.org-card {
+    border: 2px solid #1d2951; /* Slightly thinner border for mobile */
+    padding: 15px; /* Reduced padding for compactness */
+    width: 100%; /* Full width on mobile for better use of space */
+    max-width: 300px; /* Cap width to prevent overly wide cards */
+    border-radius: 12px; /* Softer corners */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f9fa; /* Light background for contrast */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.org-card:hover {
+    transform: translateY(-3px); /* Subtle lift on hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.org-card img {
+    width: 120px; /* Smaller logo size for mobile */
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 10px; /* Space below image */
+}
+
+.org-card p {
+    font-size: 0.95rem; /* Slightly smaller font for readability */
+    color: #333; /* Darker text for contrast */
+    margin: 0 0 10px 0;
+    line-height: 1.4; /* Better line spacing */
+}
+
+.org-card a {
+    display: block;
+    text-decoration: none;
+    color: #1d2951;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: #e0e7ff; /* Light blue background for links */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.org-card a:hover {
+    background-color: #1d2951;
+    color: #FFD700; /* Gold text on hover for consistency */
+}
+
+/* === MOBILE ADJUSTMENTS === */
+@media (max-width: 768px) {
+    .organizations {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center;
+        gap: 12px; /* Tighter gap for mobile */
+        padding: 0 10px; /* Add padding to prevent edge-to-edge */
+    }
+
+    .org-card {
+        width: 90%; /* Slightly less than full width for breathing room */
+        max-width: 280px; /* Cap width for consistency */
+        padding: 12px;
+        border-radius: 10px; /* Slightly smaller radius */
+    }
+
+    .org-card img {
+        width: 100px; /* Even smaller logo for smaller screens */
+        height: 100px;
+    }
+
+    .org-card p {
+        font-size: 0.9rem; /* Adjust font size */
+    }
+
+    .org-card a {
+        font-size: 0.85rem;
+        padding: 6px 10px; /* Smaller button size */
+    }
+}
+
+@media (max-width: 576px) {
+    .org-card {
+        width: 95%; /* Almost full width for very small screens */
+        max-width: 260px;
+        padding: 10px;
+    }
+
+    .org-card img {
+        width: 80px; /* Smallest logo size for tiny screens */
+        height: 80px;
+    }
+
+    .org-card p {
+        font-size: 0.85rem; /* Smallest readable font */
+    }
+
+    .org-card a {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+    }
+}
+
+/* === ORGANIZATIONS === */
+.index-page .organizations {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px; /* Reduced gap for better spacing on mobile */
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.index-page .org-card {
+    border: 2px solid #1d2951; /* Slightly thinner border for mobile */
+    padding: 15px; /* Reduced padding for compactness */
+    width: 100%; /* Full width on mobile for better use of space */
+    max-width: 300px; /* Cap width to prevent overly wide cards */
+    border-radius: 12px; /* Softer corners */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f9fa; /* Light background for contrast */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.index-page .org-card:hover {
+    transform: translateY(-3px); /* Subtle lift on hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.index-page .org-card img {
+    width: 120px; /* Smaller logo size for mobile */
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 10px; /* Space below image */
+}
+
+.index-page .org-card p {
+    font-size: 0.95rem; /* Slightly smaller font for readability */
+    color: #333; /* Darker text for contrast */
+    margin: 0 0 10px 0;
+    line-height: 1.4; /* Better line spacing */
+}
+
+.index-page .org-card a {
+    display: block;
+    text-decoration: none;
+    color: #1d2951;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: #e0e7ff; /* Light blue background for links */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.index-page .org-card a:hover {
+    background-color: #1d2951;
+    color: #FFD700; /* Gold text on hover for consistency */
+}
+
+/* === MOBILE ADJUSTMENTS === */
+@media (max-width: 768px) {
+    .index-page .organizations {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center;
+        gap: 12px; /* Tighter gap for mobile */
+        padding: 0 10px; /* Add padding to prevent edge-to-edge */
+    }
+
+    .index-page .org-card {
+        width: 90%; /* Slightly less than full width for breathing room */
+        max-width: 280px; /* Cap width for consistency */
+        padding: 12px;
+        border-radius: 10px; /* Slightly smaller radius */
+    }
+
+    .index-page .org-card img {
+        width: 100px; /* Even smaller logo for smaller screens */
+        height: 100px;
+    }
+
+    .index-page .org-card p {
+        font-size: 0.9rem; /* Adjust font size */
+    }
+
+    .org-card a {
+        font-size: 0.85rem;
+        padding: 6px 10px; /* Smaller button size */
+    }
+}
+
+@media (max-width: 576px) {
+    .index-page .org-card {
+        width: 95%; /* Almost full width for very small screens */
+        max-width: 260px;
+        padding: 10px;
+    }
+
+    .index-page .org-card img {
+        width: 80px; /* Smallest logo size for tiny screens */
+        height: 80px;
+    }
+
+    .index-page .org-card p {
+        font-size: 0.85rem; /* Smallest readable font */
+    }
+
+    .index-page .org-card a {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+    }
+}
