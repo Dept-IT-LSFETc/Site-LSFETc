@@ -86,26 +86,92 @@
 
 <body class="page-exchange">
 
+
+    <style>
+        /* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100px;
+    height: auto;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: 1; /* Above the image, below the logo and text */
+}
+
+.hero-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Above the overlay */
+}
+
+.logo-mask {
+    width: 5000px; /* Adjust size as needed */
+    height: auto;
+    display: block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .logo-mask {
+        width: 150px; /* Smaller logo for mobile */
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-mask {
+        width: 100px; /* Even smaller for very small screens */
+    }
+}
+.testimonial, .testimonial-card {
+    background:#2B2C2B;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.testimonial .card-text {
+    font-size: 1.2rem;
+    color: white;
+
+}
+
+    </style>
+
     <div class="position-relative">
         <img src="../imagini/proiecte/exchange1.png" class="img-fluid w-100" alt="Photo 1">
 
         <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
 
-        <div class="position-absolute top-50 start-50 translate-middle text-white text-center px-3" style="z-index: 2;">
-            <h1 class="fw-bold display-5">ELECTRONICS SUMMER UNIVERSITY</h1>
+        <div class="hero-logo">
+            <img src="../imagini/Sigla Exchange alb.png" alt="Logo" class="logo-mask">
         </div>
     </div>
 
-    <section class="container text-center my-5">
-        <h2 class="fw-bold text-dark text-start">Impact proiect</h2>
+    <section class="container text-center my-5 impact">
+        <h2 class="fw-bold text-start impact";>Impact proiect</h2>
         <div class="row justify-content-center mt-4 gy-4">
             <div class="col-6 col-sm-4 col-md-2">
-                <h3 class="stat-number">200</h3>
-                <p class="stat-text">de membri</p>
+                <h3 class="stat-number">31 </h3>
+                <p class="stat-text">de editii</p>
             </div>
             <div class="col-6 col-sm-4 col-md-2">
-                <h3 class="stat-number">28</h3>
-                <p class="stat-text">de ani de LSFETc</p>
+                <h3 class="stat-number">2</h3>
+                <p class="stat-text">proiecte pe an</p>
             </div>
             <div class="col-6 col-sm-4 col-md-2">
                 <h3 class="stat-number">6</h3>
@@ -123,13 +189,13 @@
     </section>
 
     <section class="container mt-5">
-        <h2 class="text-primary">Despre Proiect</h2>
+        <h2 class="section-title mb-4">Despre Proiect</h2>
         <div class="row align-items-center">
             <div class="col-md-6 mb-3 mb-md-0">
                 <img src="../imagini/bc.png" class="img-fluid rounded" alt="Conferință">
             </div>
             <div class="col-md-6">
-                <div style="background-color: rgb(207, 24, 116); padding: 20px; border-radius: 10px;">
+                <div style="background-color: #E12044; padding: 20px; border-radius: 10px;">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
                 </div>
             </div>
@@ -138,7 +204,7 @@
     
 
     <section class="container mt-5">
-        <h2 class="text-primary mb-4">Testimoniale</h2>
+        <h2 class="section-title mb-4">Testimoniale</h2>
         <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -146,25 +212,25 @@
                         <div class="col-md-4 d-flex justify-content-center">
                             <div class="card testimonial-card text-center shadow p-4">
                                 <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mb-3" alt="Student 1">
-                                <p class="card-text">"A fost o experiență grozavă!"</p>
-                                <h5 class="card-title mt-2">Andrei Popescu</h5>
-                                <p class="text-muted">Student</p>
+                                <p class="card-text" style="color:white;">"A fost o experiență grozavă!"</p>
+                                <h5 class="card-title mt-2" style="color:white;">Andrei Popescu</h5>
+                                <p class="text-muted" style="color:white;">Student</p>
                             </div>
                         </div>
                         <div class="col-md-4 d-flex justify-content-center">
                             <div class="card testimonial-card text-center shadow p-4">
                                 <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mb-3" alt="Student 2">
-                                <p class="card-text">"Mi-a plăcut modul de predare și susținerea profesorilor."</p>
-                                <h5 class="card-title mt-2">Ioana Georgescu</h5>
-                                <p class="text-muted">Student</p>
+                                <p class="card-text" style="color:white;">"Mi-a plăcut modul de predare și susținerea profesorilor."</p>
+                                <h5 class="card-title mt-2" style="color:white;">Ioana Georgescu</h5>
+                                <p class="text-muted" style="color:white;">Student</p>
                             </div>
                         </div>
                         <div class="col-md-4 d-flex justify-content-center">
                             <div class="card testimonial-card text-center shadow p-4">
-                                <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mb-3" alt="Student 3">
-                                <p class="card-text">"Recomand cu încredere tuturor celor interesați!"</p>
-                                <h5 class="card-title mt-2">Mihai Ionescu</h5>
-                                <p class="text-muted">Absolvent</p>
+                                <img src="../imagini/bc+cc/Alesio.png" class="rounded-circle mx-auto mb-3" style="border: 3px solid white;" alt="Student 3">
+                                <p class="card-text" style="color:white;">"Recomand cu încredere tuturor celor interesați!"</p>
+                                <h5 class="card-title mt-2" style="color:white;">Mihai Ionescu</h5>
+                                <p style="color:white;">Absolvent</p>
                             </div>
                         </div>
                     </div>
@@ -175,25 +241,25 @@
                         <div class="col-md-4 d-flex justify-content-center">
                             <div class="card testimonial-card text-center shadow p-4">
                                 <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mb-3" alt="Student 4">
-                                <p class="card-text">"Profesorii sunt foarte implicați."</p>
-                                <h5 class="card-title mt-2">Elena Dobre</h5>
-                                <p class="text-muted">Student</p>
+                                <p class="card-text" style="color:white;">"Profesorii sunt foarte implicați."</p>
+                                <h5 class="card-title mt-2" style="color:white;">Elena Dobre</h5>
+                                <p class="text-muted" style="color:white;">Student</p>
                             </div>
                         </div>
                         <div class="col-md-4 d-flex justify-content-center">
                             <div class="card testimonial-card text-center shadow p-4">
                                 <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mb-3" alt="Student 5">
-                                <p class="card-text">"Mediul de învățare este excelent!"</p>
-                                <h5 class="card-title mt-2">Vlad Marinescu</h5>
-                                <p class="text-muted">Student</p>
+                                <p class="card-text" style="color:white;">"Mediul de învățare este excelent!"</p>
+                                <h5 class="card-title mt-2" style="color:white;">Vlad Marinescu</h5>
+                                <p class="text-muted" style="color:white;">Student</p>
                             </div>
                         </div>
                         <div class="col-md-4 d-flex justify-content-center">
                             <div class="card testimonial-card text-center shadow p-4">
                                 <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mb-3" alt="Student 6">
-                                <p class="card-text">"Am legat prietenii frumoase aici."</p>
-                                <h5 class="card-title mt-2">Cristina Ilie</h5>
-                                <p class="text-muted">Studentă</p>
+                                <p class="card-text" style="color:white;">"Am legat prietenii frumoase aici."</p>
+                                <h5 class="card-title mt-2" style="color:white;">Cristina Ilie</h5>
+                                <p class="text-muted" style="color:white;">Studentă</p>
                             </div>
                         </div>
                     </div>
@@ -204,7 +270,7 @@
     </section>
 
     <section class="container mt-5">
-        <h2 class="text-primary">Galerie</h2>
+        <h2 class="section-title mb-4">Galerie</h2>
         <div id="galerieCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
