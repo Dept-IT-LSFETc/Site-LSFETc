@@ -8,7 +8,6 @@
     <link rel="icon" type="image/x-icon" href="imagini/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body class="page-index">
     <div id="loader">
@@ -258,6 +257,636 @@
             <p><a href="#">Donează 3.5</a></p>
         </div>
     </footer>
+
+    <style>
+        /* === GLOBAL STYLES === */
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+h2 {
+    color: #1d2951;
+    font-size: 2.3rem;
+    font-weight: bold;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* === HEADER & NAVIGATION === */
+header {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    height: 120px;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 20px;
+}
+
+nav .logo {
+    width: 90px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav .logo:hover {
+    transform: scale(1.2);
+}
+
+.navbar .nav-link {
+    color: black !important;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.navbar .nav-link:hover {
+    color: #FFD700 !important;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.dropdown-item {
+    color: #26346D;
+    padding: 10px 20px;
+    transition: background 0.3s ease-in-out;
+}
+
+.dropdown-item:hover {
+    background-color: #26346D;
+    color: white;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+    position: relative;
+    z-index: 1100;
+}
+
+
+
+.header-button-container {
+    display: none;
+}
+
+.header-button-container a {
+    display: block;
+}
+
+/* === STATISTICS === */
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    background-color: #004080;
+}
+
+.stat-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* === ORGANIZATIONS === */
+.organizations {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.org-card {
+    border: 2px solid #1d2951;
+    padding: 15px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.org-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.org-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.org-card p {
+    font-size: 0.95rem;
+    color: #333;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+}
+
+.org-card a {
+    display: block;
+    text-decoration: none;
+}
+
+/* === GLOBAL STYLES === */
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+h2 {
+    color: #1d2951;
+    font-size: 2.3rem;
+    font-weight: bold;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* === HEADER & NAVIGATION === */
+header {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    height: 120px;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 20px;
+}
+
+nav .logo {
+    width: 90px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav .logo:hover {
+    transform: scale(1.2);
+}
+
+.navbar .nav-link {
+    color: black !important;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.navbar .nav-link:hover {
+    color: #FFD700 !important;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.dropdown-item {
+    color: #26346D;
+    padding: 10px 20px;
+    transition: background 0.3s ease-in-out;
+}
+
+.dropdown-item:hover {
+    background-color: #26346D;
+    color: white;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+    position: relative;
+    z-index: 1100;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(0, 0, 0, 0.8)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    width: 24px;
+    height: 24px;
+}
+
+.header-button-container {
+    display: none;
+}
+
+.header-button-container a {
+    display: block;
+}
+
+/* === STATISTICS === */
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    background-color: #004080;
+}
+
+.stat-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* === ORGANIZATIONS === */
+.organizations {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.org-card {
+    border: 2px solid #1d2951;
+    padding: 15px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.org-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.org-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.org-card p {
+    font-size: 0.95rem;
+    color: #333;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+}
+
+.org-card a {
+    display: block;
+    text-decoration: none;
+    color: #1d2951;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: #e0e7ff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.org-card a:hover {
+    background-color: #1d2951;
+    color: #FFD700;
+}
+
+/* === TESTIMONIALS === */
+.testimonial-card {
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    background: white;
+    padding: 20px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.testimonial-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #007bff;
+    margin-bottom: 10px;
+}
+
+/* === FOOTER === */
+.footer {
+    background-color: #1A2B50;
+    padding: 20px;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.footer-logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-logo {
+    height: 130px;
+    width: 130px;
+    margin-top: 5px;
+}
+
+.footer-social-icons {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    margin-top: 10px;
+    align-items: flex-end;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #FFD700;
+}
+
+/* === BUTTON IMAGE === */
+.button-img {
+    width: 60px;
+    height: 50px;
+    margin-right: 5px;
+}
+
+/* === LOADER === */
+#loader {
+    position: fixed;
+    inset: 0;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+    opacity: 1;
+    visibility: visible;
+}
+
+#loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.spinner {
+    --size: 30px;
+    --first-block-clr: #005bba;
+    --second-block-clr: #fed500;
+    --clr: #111;
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+.spinner::after,
+.spinner::before {
+    box-sizing: border-box;
+    position: absolute;
+    content: "";
+    width: var(--size);
+    height: var(--size);
+    top: 50%;
+    animation: up 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+    left: 50%;
+    background: var(--first-block-clr);
+}
+
+.spinner::after {
+    background: var(--second-block-clr);
+    top: calc(50% - var(--size));
+    left: calc(50% - var(--size));
+    animation: down 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+}
+
+@keyframes down {
+    0%, 100% {
+        transform: none;
+    }
+    25% {
+        transform: translateX(100%);
+    }
+    50% {
+        transform: translateX(100%) translateY(100%);
+    }
+    75% {
+        transform: translateY(100%);
+    }
+}
+
+@keyframes up {
+    0%, 100% {
+        transform: none;
+    }
+    25% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(-100%) translateY(-100%);
+    }
+    75% {
+        transform: translateY(-100%);
+    }
+}
+
+/* === MEDIA QUERIES === */
+@media (max-width: 768px) {
+    .organizations {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 0 10px;
+    }
+
+    .org-card {
+        width: 90%;
+        max-width: 280px;
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    .org-card img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .org-card p {
+        font-size: 0.9rem;
+    }
+
+    .org-card a {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+    }
+
+    header {
+        padding: 0.5rem;
+    }
+
+    .navbar-collapse {
+        background-color: white;
+        padding: 1rem;
+        border-radius: 5px;
+        margin-top: 0.5rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-nav {
+        background-color: white;
+        padding: 1rem;
+        border-radius: 5px;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .header-button-container {
+        display: block;
+    }
+
+    .header-button-mobile-hidden {
+        display: none;
+    }
+
+    .navbar-right {
+        gap: 1rem;
+    }
+
+    .navbar-toggler {
+        padding: 0.75rem;
+    }
+
+    .navbar-toggler-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .testimonial-card {
+        margin-bottom: 1.5rem;
+    }
+
+    .text-start {
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .org-card {
+        width: 95%;
+        max-width: 260px;
+        padding: 10px;
+    }
+
+    .org-card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .org-card p {
+        font-size: 0.85rem;
+    }
+
+    .org-card a {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+    }
+}
+    </style>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
