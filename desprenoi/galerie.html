@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../imagini/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
+    <!-- Header (unchanged) -->
     <header>
         <nav class="navbar navbar-expand-md custom-navbar navbar-light">
             <div class="container">
@@ -17,20 +20,15 @@
                     <img src="../imagini/logo.png" alt="Logo" class="logo">
                 </a>
                 <div class="navbar-right">
-                    <div class="header-button-container">
-                        <a href="YOUR_LINK_HERE" class="header-button">
-                            <img src="../imagini/button.png" alt="Button" class="button-img">
-                        </a>
-                    </div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <!-- Despre Noi Dropdown -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="despreNoiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="despreNoiDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Despre noi
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="despreNoiDropdown">
@@ -40,9 +38,9 @@
                                 <li><a class="dropdown-item" href="galerie.html">Galerie</a></li>
                             </ul>
                         </li>
-                        <!-- Proiecte Dropdown -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="proiecteDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="proiecteDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Proiecte
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="proiecteDropdown">
@@ -54,23 +52,22 @@
                                 <li><a class="dropdown-item" href="#">NEW</a></li>
                             </ul>
                         </li>
-                        <!-- Anunțuri -->
                         <li class="nav-item"><a class="nav-link" href="../anunturi.html">Anunțuri</a></li>
-                        <!-- Informații Utile Dropdown -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Informații utile
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="infoDropdown">
                                 <li><a class="dropdown-item" href="../informatii/blog.html">Blog</a></li>
-                                <li><a class="dropdown-item" href="../informatii/studentii.html">Studenții Reprezentanți</a></li>
+                                <li><a class="dropdown-item" href="../informatii/studentii.html">Studenții
+                                        Reprezentanți</a></li>
                                 <li><a class="dropdown-item" href="../informatii/documente.html">Documente</a></li>
-                                <li><a class="dropdown-item" href="../informatii/proiectevechi.html">Proiecte Vechi</a></li>
+                                <li><a class="dropdown-item" href="../informatii/proiectevechi.html">Proiecte Vechi</a>
+                                </li>
                             </ul>
                         </li>
-                        <!-- FAQ -->
                         <li class="nav-item"><a class="nav-link" href="../faq.html">FAQ</a></li>
-                        <!-- Button -->
                         <li class="nav-item header-button-mobile-hidden">
                             <a href="YOUR_LINK_HERE" class="header-button">
                                 <img src="../imagini/button.png" alt="Button" class="button-img">
@@ -81,43 +78,547 @@
             </div>
         </nav>
     </header>
-    
-</head>
-<body>
-    <main>
-        <h2>Galerie Foto</h2>
-        <div class="gallery-container">
-            <!-- Replace with your actual image paths -->
-            <div class="gallery-item" data-src="../imagini/poza-1.png">
-                <img src="../imagini/poza-1.png" alt="Photo 1">
-            </div>
-            <div class="gallery-item" data-src="../imagini/banner.jpg">
-                <img src="../imagini/banner.jpg" alt="Photo 2">
-            </div>
-            <div class="gallery-item" data-src="../imagini/slider1.jpg">
-                <img src="../imagini/slider1.jpg" alt="Photo 3">
-            </div>
-            <div class="gallery-item" data-src="../imagini/cospol.png">
-                <img src="../imagini/cospol.png" alt="Photo 4">
-            </div>
-            <div class="gallery-item" data-src="../imagini/fitt.png">
-                <img src="../imagini/fitt.png" alt="Photo 5">
-            </div>
-            <div class="gallery-item" data-src="../imagini/anosr.png">
-                <img src="../imagini/anosr.png" alt="Photo 6">
-            </div>
-        </div>
 
-        <!-- Overlay for enlarged image -->
-        <div class="overlay" id="imageOverlay">
-            <img class="overlay-image" id="overlayImage" src="" alt="Enlarged Image">
-            <div class="overlay-buttons">
-                <button id="prevBtn" aria-label="Previous Image">←</button>
-                <button id="nextBtn" aria-label="Next Image">→</button>
+    <section class="hero">
+        <img src="../imagini/bc.png" alt="Liga ETc" class="hero-image">
+    </section>
+
+    <main>
+        <section class="gallery-section">
+            <h2>Galerie Foto</h2>
+            <div class="gallery-container">
+                <div class="gallery-item" data-src="../imagini/poza-1.png">
+                    <img src="../imagini/poza-1.png" alt="Eveniment LSFETc">
+                </div>
+                <div class="gallery-item" data-src="../imagini/banner.jpg">
+                    <img src="../imagini/banner.jpg" alt="Banner LSFETc">
+                </div>
+                <div class="gallery-item" data-src="../imagini/slider1.jpg">
+                    <img src="../imagini/slider1.jpg" alt="Activitate LSFETc">
+                </div>
+                <div class="gallery-item" data-src="../imagini/cospol.png">
+                    <img src="../imagini/cospol.png" alt="Eveniment Cospol">
+                </div>
+                <div class="gallery-item" data-src="../imagini/fitt.png">
+                    <img src="../imagini/fitt.png" alt="Proiect FITT">
+                </div>
+                <div class="gallery-item" data-src="../imagini/anosr.png">
+                    <img src="../imagini/anosr.png" alt="Colaborare ANOSR">
+                </div>
             </div>
-            <button class="close-btn" id="closeBtn" aria-label="Close Overlay">×</button>
-        </div>
+
+            <!-- Overlay for enlarged image -->
+            <div class="overlay" id="imageOverlay">
+                <img class="overlay-image" id="overlayImage" src="" alt="Enlarged Image">
+                <div class="overlay-buttons">
+                    <button id="prevBtn" aria-label="Previous Image"><i class="fas fa-chevron-left"></i></button>
+                    <button id="nextBtn" aria-label="Next Image"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <button class="close-btn" id="closeBtn" aria-label="Close Overlay"><i class="fas fa-times"></i></button>
+            </div>
+        </section>
     </main>
+
+    <!-- Footer (modified for alignment) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo-container">
+                    <img src="../imagini/logo-white.png" alt="LIGA ETc Logo" class="footer-logo">
+                    <div class="footer-social-icons">
+                        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="mailto:YOUR_EMAIL_HERE" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Liga ETc</h4>
+                    <ul>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="#">Donează 3.5%</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Liga ETc. Toate drepturile rezervate.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        /* === GLOBAL STYLES === */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f8fafc;
+            margin: 0;
+            text-align: center;
+            width: 100%;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* === HEADER & NAVIGATION (unchanged) === */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .custom-navbar {
+            background-color: transparent;
+        }
+
+        .logo {
+            width: 100px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar-nav .nav-link {
+            color: #1d2951 !important;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 0.75rem 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #FFD700 !important;
+        }
+
+        .dropdown-menu {
+            background-color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown-item {
+            color: #1d2951;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #1d2951;
+            color: #ffffff;
+        }
+
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .header-button-container {
+            display: none;
+        }
+
+        .header-button {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .button-img {
+            width: 60px;
+            height: 50px;
+            transition: transform 0.3s ease;
+        }
+
+        .header-button:hover .button-img {
+            transform: scale(1.1);
+        }
+
+        .header-button-mobile-hidden {
+            display: block;
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 0.5rem;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(29, 41, 81, 0.8)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+            width: 28px;
+            height: 28px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            max-height: 500px;
+            border-bottom: 4px solid #FFD700;
+        }
+
+        /* === GALLERY SECTION (unchanged) === */
+        .gallery-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .gallery-section h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #1d2951;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding: 0 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            border: 2px solid #f8fafc;
+            border-radius: 10px;
+        }
+
+        /* === OVERLAY STYLES (unchanged) === */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 2rem;
+        }
+
+        .overlay.active {
+            display: flex;
+        }
+
+        .overlay-image {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 8px;
+            border: 3px solid #FFD700;
+            box-shadow: 0 4selvespx 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .overlay-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 1rem;
+        }
+
+        .overlay-buttons button {
+            background: #1d2951;
+            color: #ffffff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .overlay-buttons button:hover {
+            background: #FFD700;
+            color: #1d2951;
+            transform: scale(1.1);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #1d2951;
+            color: #ffffff;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn:hover {
+            background: #FFD700;
+            color: #1d2951;
+            transform: scale(1.1);
+        }
+
+        /* === FOOTER (modified for alignment) === */
+        .footer {
+            background-color: #1A2B50;
+            color: white;
+            padding: 20px 0;
+            width: 100%;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
+            flex-wrap: wrap;
+            min-height: 140px; /* Ensures consistent height for alignment */
+        }
+
+        .footer-logo-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Vertically center content */
+            align-items: flex-start;
+        }
+
+        .footer-logo {
+            width: 120px;
+            height: auto;
+            margin-bottom:-5px;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer-social-icons a:hover {
+            color: #FFD700;
+            transform: scale(1.2);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Vertically center content */
+            text-align: right;
+            gap: 10px;
+        }
+
+        .footer-links h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FFD700;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #e0e0e0;
+        }
+
+        /* === MEDIA QUERIES === */
+        @media (max-width: 768px) {
+            .navbar-collapse {
+                background-color: #ffffff;
+                padding: 1rem;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                margin-top: 0.5rem;
+            }
+
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+            }
+
+            .header-button-container {
+                display: block;
+            }
+
+            .header-button-mobile-hidden {
+                display: none;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .footer-logo-container {
+                align-items: center;
+                justify-content: center;
+            }
+
+            .footer-links {
+                text-align: center;
+                justify-content: center;
+            }
+
+            .footer-links ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .gallery-container {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+
+            .gallery-item img {
+                height: 180px;
+            }
+
+            .overlay-buttons button {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .close-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .gallery-section h2 {
+                font-size: 2rem;
+            }
+
+            .gallery-item img {
+                height: 150px;
+            }
+
+            .overlay-image {
+                max-width: 95%;
+                max-height: 70vh;
+            }
+
+            .overlay-buttons button {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+
+            .close-btn {
+                top: 15px;
+                right: 15px;
+                width: 30px;
+                height: 30px;
+                font-size: 1rem;
+            }
+
+            .footer-logo {
+                width: 100px;
+            }
+
+            .footer-social-icons a {
+                font-size: 1.2rem;
+            }
+
+            .footer-links h4 {
+                font-size: 1.3rem;
+            }
+
+            .footer-links a {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 
     <script>
         const galleryItems = document.querySelectorAll('.gallery-item');
@@ -158,6 +659,7 @@
         function updateOverlayImage() {
             const src = galleryItems[currentIndex].getAttribute('data-src');
             overlayImage.src = src;
+            overlayImage.alt = galleryItems[currentIndex].querySelector('img').alt;
         }
 
         // Close overlay when clicking outside the image
@@ -166,32 +668,22 @@
                 overlay.classList.remove('active');
             }
         });
-    </script>
-</body>
-<footer class="footer">
-    <div class="footer-logo-container">
-        <img src="../imagini/logo-white.png" alt="LIGA ETc Logo" class="footer-logo">
-        <div class="footer-social-icons">
-            <a href="https://www.facebook.com" target="_blank">
-                <img src="../imagini/facebook-icon.png" alt="Facebook" class="social-icon">
-            </a>
-            <a href="https://www.instagram.com" target="_blank">
-                <img src="../imagini/instagram-icon.png" alt="Instagram" class="social-icon">
-            </a>
-            <a href="https://www.tiktok.com" target="_blank">
-                <img src="../imagini/tiktok-icon.png" alt="TikTok" class="social-icon">
-            </a>
-            <a href="mailto:contact@example.com">
-                <img src="../imagini/email-icon.png" alt="Email" class="social-icon">
-            </a>
-        </div>
-    </div>
-    <div class="footer-links">
-        <p><a href="../contact.html">Contact</a></p>
-        <p><a href="#">Donează 3.5</a></p>
-    </div>
-</footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (overlay.classList.contains('active')) {
+                if (e.key === 'ArrowLeft') {
+                    prevBtn.click();
+                } else if (e.key === 'ArrowRight') {
+                    nextBtn.click();
+                } else if (e.key === 'Escape') {
+                    closeBtn.click();
+                }
+            }
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

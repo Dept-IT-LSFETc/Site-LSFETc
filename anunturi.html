@@ -1,117 +1,318 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liga ETc</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="imagini/logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Gear Loader</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f8fafc;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .loader-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        /* Gearbox styles (unchanged) */
+        .gearbox {
+            background: #111;
+            height: 150px;
+            width: 200px;
+            position: relative;
+            border: none;
+            overflow: hidden;
+            border-radius: 6px;
+            box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.1);
+        }
+
+        .gearbox .overlay {
+            border-radius: 6px;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            box-shadow: inset 0px 0px 20px black;
+            transition: background 0.2s;
+            background: transparent;
+        }
+
+        .gear {
+            position: absolute;
+            height: 60px;
+            width: 60px;
+            box-shadow: 0px -1px 0px 0px #888888, 0px 1px 0px 0px black;
+            border-radius: 30px;
+        }
+
+        .gear.large {
+            height: 120px;
+            width: 120px;
+            border-radius: 60px;
+        }
+
+        .gear.large:after {
+            height: 96px;
+            width: 96px;
+            border-radius: 48px;
+            margin-left: -48px;
+            margin-top: -48px;
+        }
+
+        .gear.one {
+            top: 12px;
+            left: 10px;
+        }
+
+        .gear.two {
+            top: 61px;
+            left: 60px;
+        }
+
+        .gear.three {
+            top: 110px;
+            left: 10px;
+        }
+
+        .gear.four {
+            top: 13px;
+            left: 128px;
+        }
+
+        .gear:after {
+            content: "";
+            position: absolute;
+            height: 36px;
+            width: 36px;
+            border-radius: 36px;
+            background: #111;
+            top: 50%;
+            left: 50%;
+            margin-left: -18px;
+            margin-top: -18px;
+            z-index: 3;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1), inset 0px 0px 10px rgba(0, 0, 0, 0.1), inset 0px 2px 0px 0px #090909, inset 0px -1px 0px 0px #888888;
+        }
+
+        .gear-inner {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            background: #555;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .large .gear-inner {
+            border-radius: 60px;
+        }
+
+        .gear.one .gear-inner {
+            animation: counter-clockwise 3s infinite linear;
+        }
+
+        .gear.two .gear-inner {
+            animation: clockwise 3s infinite linear;
+        }
+
+        .gear.three .gear-inner {
+            animation: counter-clockwise 3s infinite linear;
+        }
+
+        .gear.four .gear-inner {
+            animation: counter-clockwise 6s infinite linear;
+        }
+
+        .gear-inner .bar {
+            background: #555;
+            height: 16px;
+            width: 76px;
+            position: absolute;
+            left: 50%;
+            margin-left: -38px;
+            top: 50%;
+            margin-top: -8px;
+            border-radius: 2px;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .large .gear-inner .bar {
+            margin-left: -68px;
+            width: 136px;
+        }
+
+        .gear-inner .bar:nth-child(2) {
+            transform: rotate(60deg);
+        }
+
+        .gear-inner .bar:nth-child(3) {
+            transform: rotate(120deg);
+        }
+
+        .gear-inner .bar:nth-child(4) {
+            transform: rotate(90deg);
+        }
+
+        .gear-inner .bar:nth-child(5) {
+            transform: rotate(30deg);
+        }
+
+        .gear-inner .bar:nth-child(6) {
+            transform: rotate(150deg);
+        }
+
+        @keyframes clockwise {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes counter-clockwise {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 576px) {
+            .gearbox {
+                height: 120px;
+                width: 160px;
+            }
+
+            .gear {
+                height: 48px;
+                width: 48px;
+                border-radius: 24px;
+            }
+
+            .gear.large {
+                height: 96px;
+                width: 96px;
+                border-radius: 48px;
+            }
+
+            .gear.large:after {
+                height: 76px;
+                width: 76px;
+                border-radius: 38px;
+                margin-left: -38px;
+                margin-top: -38px;
+            }
+
+            .gear.one {
+                top: 10px;
+                left: 8px;
+            }
+
+            .gear.two {
+                top: 49px;
+                left: 48px;
+            }
+
+            .gear.three {
+                top: 88px;
+                left: 8px;
+            }
+
+            .gear.four {
+                top: 10px;
+                left: 102px;
+            }
+
+            .gear:after {
+                height: 28px;
+                width: 28px;
+                border-radius: 28px;
+                margin-left: -14px;
+                margin-top: -14px;
+            }
+
+            .gear-inner {
+                border-radius: 24px;
+            }
+
+            .large .gear-inner {
+                border-radius: 48px;
+            }
+
+            .gear-inner .bar {
+                height: 12px;
+                width: 60px;
+                margin-left: -30px;
+                margin-top: -6px;
+            }
+
+            .large .gear-inner .bar {
+                margin-left: -54px;
+                width: 108px;
+            }
+        }
+    </style>
 </head>
 
-
-    <header>
-        <nav class="navbar navbar-expand-md custom-navbar navbar-light">
-            <div class="container">
-                <a href="index.html">
-                    <img src="imagini/logo.png" alt="Logo" class="logo">
-                </a>
-                <div class="navbar-right">
-                    <div class="header-button-container">
-                        <a href="https://forms.office.com/pages/responsepage.aspx?id=5B-0a6NAEEq2zTgnjniyGnmD2U03SgVHiVq-MjlrkaxUQjNNMEJTTUU3VUg1MDdNVEM4SFdTRzQ4MC4u&route=shorturl" class="header-button">
-                            <img src="imagini/button.png" alt="Button" class="button-img">
-                        </a>
-                    </div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Despre Noi Dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="despreNoiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Despre noi
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="despreNoiDropdown">
-                                <li><a class="dropdown-item" href="desprenoi/lsfetc.html">LSFETc</a></li>
-                                <li><a class="dropdown-item" href="desprenoi/bc.html">Bc+Cc</a></li>
-                                <li><a class="dropdown-item" href="desprenoi/departamente.html">Departamente</a></li>
-                                <li><a class="dropdown-item" href="desprenoi/galerie.html">Galerie</a></li>
-                            </ul>
-                        </li>
-                        <!-- Proiecte Dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="proiecteDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Proiecte
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="proiecteDropdown">
-                                <li><a class="dropdown-item" href="https://esu.lsfetc.ro">ESU</a></li>
-                                <li><a class="dropdown-item" href="#">EXCHANGE</a></li>
-                                <li><a class="dropdown-item" href="#">FTFMM</a></li>
-                                <li><a class="dropdown-item" href="#">MASA ROTUNDĂ</a></li>
-                                <li><a class="dropdown-item" href="#">ETF</a></li>
-                                <li><a class="dropdown-item" href="#">NEW</a></li>
-                            </ul>
-                        </li>
-                        <!-- Anunțuri -->
-                        <li class="nav-item"><a class="nav-link" href="anunturi.html">Anunțuri</a></li>
-                        <!-- Informații Utile Dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Informații utile
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="infoDropdown">
-                                <li><a class="dropdown-item" href="informatii/blog.html">Blog</a></li>
-                                <li><a class="dropdown-item" href="informatii/studentii.html">Studenții Reprezentanți</a></li>
-                                <li><a class="dropdown-item" href="informatii/documente.html">Documente</a></li>
-                                <li><a class="dropdown-item" href="informatii/proiectevechi.html">Proiecte Vechi</a></li>
-                            </ul>
-                        </li>
-                        <!-- FAQ -->
-                        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-                        <!-- Button -->
-                        <li class="nav-item header-button-mobile-hidden">
-                            <a href="https://forms.office.com/pages/responsepage.aspx?id=5B-0a6NAEEq2zTgnjniyGnmD2U03SgVHiVq-MjlrkaxUQjNNMEJTTUU3VUg1MDdNVEM4SFdTRzQ4MC4u&route=shorturl" class="header-button">
-                                <img src="imagini/button.png" alt="Button" class="button-img">
-                            </a>
-                        </li>
-                    </ul>
+<body>
+    <div class="loader-container">
+        <div class="gearbox">
+            <div class="overlay"></div>
+            <div class="gear one">
+                <div class="gear-inner">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
                 </div>
             </div>
-        </nav>
-    </header>
-
-    <body>
-        <h1> Aici vor urma să apară diverse anunțuri despre facultate și proiectele noastre!<br> Vă mulțumim pentru întelegere!</h1>
-    </body>
-    <footer class="footer">
-        <div class="footer-logo-container">
-            <img src="imagini/logo-white.png" alt="LIGA ETc Logo" class="footer-logo">
-            <div class="footer-social-icons">
-                <a href="https://www.facebook.com" target="_blank">
-                    <img src="imagini/facebook-icon.png" alt="Facebook" class="social-icon">
-                </a>
-                <a href="https://www.instagram.com" target="_blank">
-                    <img src="imagini/instagram-icon.png" alt="Instagram" class="social-icon">
-                </a>
-                <a href="https://www.tiktok.com" target="_blank">
-                    <img src="imagini/tiktok-icon.png" alt="TikTok" class="social-icon">
-                </a>
-                <a href="mailto:contact@example.com">
-                    <img src="imagini/email-icon.png" alt="Email" class="social-icon">
-                </a>
+            <div class="gear two">
+                <div class="gear-inner">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <div class="gear three">
+                <div class="gear-inner">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <div class="gear four large">
+                <div class="gear-inner">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
             </div>
         </div>
-        <div class="footer-links">
-            <p><a href="contact.html">Contact</a></p>
-            <p><a href="#">Donează 3.5</a></p>
-        </div>
-    </footer>
+    </div>
 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <div>Vom reveni in scurt timp</div>
 </body>
+
 </html>

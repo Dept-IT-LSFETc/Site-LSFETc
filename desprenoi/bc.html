@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ro">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +7,499 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../imagini/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* === GLOBAL STYLES === */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f8fafc;
+            margin: 0;
+            text-align: center;
+            width: 100%;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #1d2951;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin: 2rem 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            color: #1d2951;
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 3rem 0 1.5rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #FFD700;
+            margin: 0.5rem auto;
+            border-radius: 2px;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* === HEADER & NAVIGATION === */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .custom-navbar {
+            background-color: transparent;
+        }
+
+        .logo {
+            width: 100px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar-nav .nav-link {
+            color: #1d2951 !important;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 0.75rem 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #FFD700 !important;
+        }
+
+        .dropdown-menu {
+            background-color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown-item {
+            color: #1d2951;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #1d2951;
+            color: #ffffff;
+        }
+
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .header-button-container {
+            display: none;
+        }
+
+        .header-button {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .button-img {
+            width: 60px;
+            height: 50px;
+            transition: transform 0.3s ease;
+        }
+
+        .header-button:hover .button-img {
+            transform: scale(1.1);
+        }
+
+        .header-button-mobile-hidden {
+            display: block;
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 0.5rem;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(29, 41, 81, 0.8)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+            width: 28px;
+            height: 28px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* === GRID CONTAINERS === */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .cardbc, .card {
+            background: linear-gradient(135deg, #ffffff, #f8fafc);
+            border: none;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cardbc:hover, .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .cardbc img, .card img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 4px solid #1d2951;
+            transition: border-color 0.3s ease;
+        }
+
+        .cardbc:hover img, .card:hover img {
+            border-color: #FFD700;
+        }
+
+        .cardbc h3, .card h3 {
+            font-size: 1.3rem;
+            color: #1d2951;
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+
+        .cardbc p, .card p {
+            font-size: 1rem;
+            color: #4a5568;
+            margin-bottom: 1rem;
+        }
+
+        /* === SOCIAL ICONS === */
+        .social-icons {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            color: #1d2951;
+            font-size: 1.3rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #FFD700;
+            transform: scale(1.15);
+        }
+
+        /* === FOOTER === */
+        .footer {
+            background-color: #1A2B50;
+            color: white;
+            padding: 40px 0;
+            width: 100%;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer-social-icons a:hover {
+            color: #FFD700;
+            transform: scale(1.2);
+        }
+
+        .footer-links {
+            text-align: right;
+        }
+
+        .footer-links h4 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FFD700;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #e0e0e0;
+        }
+
+        /* === SHAPES CONTAINER === */
+        .shapes-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .shape {
+            position: absolute;
+            animation: float 10s infinite ease-in-out;
+        }
+
+        .yellow-shape {
+            background: linear-gradient(45deg, #FFD700, #FFC107);
+            opacity: 0.7;
+        }
+
+        .blue-shape {
+            background: linear-gradient(45deg, #1E88E5, #1d2951);
+            opacity: 0.7;
+        }
+
+        .shape1 {
+            width: 400px;
+            height: 400px;
+            top: -50px;
+            left: -50px;
+            clip-path: polygon(10% 10%, 40% 5%, 70% 20%, 90% 50%, 70% 80%, 30% 90%, 10% 60%);
+        }
+
+        .shape2 {
+            width: 350px;
+            height: 350px;
+            top: -30px;
+            right: -30px;
+            clip-path: polygon(30% 10%, 60% 0%, 90% 30%, 80% 70%, 50% 90%, 20% 80%, 10% 40%);
+        }
+
+        .shape3 {
+            width: 300px;
+            height: 300px;
+            top: 50%;
+            left: -40px;
+            clip-path: polygon(15% 20%, 50% 10%, 80% 30%, 90% 60%, 60% 90%, 20% 80%, 5% 50%);
+        }
+
+        .shape4 {
+            width: 450px;
+            height: 450px;
+            bottom: -70px;
+            right: -70px;
+            clip-path: polygon(25% 15%, 60% 5%, 85% 25%, 95% 55%, 70% 85%, 40% 95%, 10% 65%);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* === MEDIA QUERIES === */
+        @media (max-width: 768px) {
+            .shape1, .shape2, .shape3, .shape4 {
+                transform: scale(0.7);
+            }
+
+            .shape1 {
+                width: 300px;
+                height: 300px;
+                top: -20px;
+                left: -20px;
+            }
+
+            .shape2 {
+                width: 250px;
+                height: 250px;
+                top: -10px;
+                right: -10px;
+            }
+
+            .shape3 {
+                width: 200px;
+                height: 200px;
+                left: -10px;
+            }
+
+            .shape4 {
+                width: 350px;
+                height: 350px;
+                bottom: -30px;
+                right: -30px;
+            }
+
+            .navbar-collapse {
+                background-color: #ffffff;
+                padding: 1rem;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                margin-top: 0.5rem;
+            }
+
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+            }
+
+            .header-button-container {
+                display: block;
+            }
+
+            .header-button-mobile-hidden {
+                display: none;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .footer-logo-container {
+                align-items: center;
+            }
+
+            .footer-links {
+                text-align: center;
+            }
+
+            .footer-links ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .footer-logo {
+                width: 100px;
+            }
+
+            .footer-social-icons a {
+                font-size: 1.2rem;
+            }
+
+            .footer-links h4 {
+                font-size: 1.3rem;
+            }
+
+            .footer-links a {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 
 </head>
-
 <body class="bc-page">
     <header>
         <nav class="navbar navbar-expand-md custom-navbar navbar-light">
@@ -19,22 +508,15 @@
                     <img src="../imagini/logo.png" alt="Logo" class="logo">
                 </a>
                 <div class="navbar-right">
-                    <div class="header-button-container">
-                        <a href="YOUR_LINK_HERE" class="header-button">
-                            <img src="../imagini/button.png" alt="Button" class="button-img">
-                        </a>
-                    </div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <!-- Despre Noi Dropdown -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="despreNoiDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="despreNoiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Despre noi
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="despreNoiDropdown">
@@ -44,10 +526,8 @@
                                 <li><a class="dropdown-item" href="galerie.html">Galerie</a></li>
                             </ul>
                         </li>
-                        <!-- Proiecte Dropdown -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="proiecteDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="proiecteDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Proiecte
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="proiecteDropdown">
@@ -59,26 +539,19 @@
                                 <li><a class="dropdown-item" href="#">NEW</a></li>
                             </ul>
                         </li>
-                        <!-- Anunțuri -->
                         <li class="nav-item"><a class="nav-link" href="../anunturi.html">Anunțuri</a></li>
-                        <!-- Informații Utile Dropdown -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Informații utile
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="infoDropdown">
                                 <li><a class="dropdown-item" href="../informatii/blog.html">Blog</a></li>
-                                <li><a class="dropdown-item" href="../informatii/studentii.html">Studenții
-                                        Reprezentanți</a></li>
+                                <li><a class="dropdown-item" href="../informatii/studentii.html">Studenții Reprezentanți</a></li>
                                 <li><a class="dropdown-item" href="../informatii/documente.html">Documente</a></li>
-                                <li><a class="dropdown-item" href="../informatii/proiectevechi.html">Proiecte Vechi</a>
-                                </li>
+                                <li><a class="dropdown-item" href="../informatii/proiectevechi.html">Proiecte Vechi</a></li>
                             </ul>
                         </li>
-                        <!-- FAQ -->
                         <li class="nav-item"><a class="nav-link" href="../faq.html">FAQ</a></li>
-                        <!-- Button -->
                         <li class="nav-item header-button-mobile-hidden">
                             <a href="YOUR_LINK_HERE" class="header-button">
                                 <img src="../imagini/button.png" alt="Button" class="button-img">
@@ -131,8 +604,7 @@
                 <h3>Iordaiche Alexandru</h3>
                 <p>Vicepreședinte Proiecte</p>
                 <div class="social-icons">
-                    <a href="https://www.facebook.com/profile.php?id=100010192835293"><i
-                            class="fab fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100010192835293"><i class="fab fa-facebook"></i></a>
                     <a href="https://www.instagram.com/alex_iordaiche/"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fas fa-envelope"></i></a>
                 </div>
@@ -204,7 +676,7 @@
             <div class="card">
                 <img src="../imagini/bc+cc/Madi.png" alt="Maria Iorgoni">
                 <h3>Iorgoni Maria</h3>
-                <p>Coorodonator Relații Publice</p>
+                <p>Coordonator Relații Publice</p>
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
@@ -247,457 +719,40 @@
     </div>
 
     <footer class="footer">
-        <div class="footer-logo-container">
-            <img src="../imagini/logo-white.png" alt="LIGA ETc Logo" class="footer-logo">
-            <div class="footer-social-icons">
-                <a href="https://www.facebook.com" target="_blank">
-                    <img src="../imagini/facebook-icon.png" alt="Facebook" class="social-icon">
-                </a>
-                <a href="https://www.instagram.com" target="_blank">
-                    <img src="../imagini/instagram-icon.png" alt="Instagram" class="social-icon">
-                </a>
-                <a href="https://www.tiktok.com" target="_blank">
-                    <img src="../imagini/tiktok-icon.png" alt="TikTok" class="social-icon">
-                </a>
-                <a href="mailto:contact@example.com">
-                    <img src="../imagini/email-icon.png" alt="Email" class="social-icon">
-                </a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo-container">
+                    <img src="../imagini/logo-white.png" alt="LIGA ETc Logo" class="footer-logo">
+                    <div class="footer-social-icons">
+                        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="mailto:contact@example.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Liga ETc</h4>
+                    <ul>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="#">Donează 3.5%</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="footer-links">
-            <p><a href="../contact.html">Contact</a></p>
-            <p><a href="#">Donează 3.5</a></p>
+            <div class="footer-bottom">
+                <p>© 2025 Liga ETc. Toate drepturile rezervate.</p>
+            </div>
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
-    <style>
-        /* === GLOBAL STYLES === */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            text-align: center;
-            width: 100%;
-            overflow-x: hidden;
-        }
-
-        h2 {
-            color: #1d2951;
-            font-size: 2.3rem;
-            font-weight: bold;
-        }
-
-        img {
-            display: block;
-            width: 100%;
-            max-width: 100%;
-        }
-
-        /* === HEADER & NAVIGATION === */
-        header {
-            background-color: white;
-            display: grid;
-            grid-template-columns: 1fr auto;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            height: 120px;
-            width: 100%;
-            z-index: 1000;
-            padding: 10px 20px;
-        }
-
-        nav .logo {
-            width: 90px;
-            height: auto;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        nav .logo:hover {
-            transform: scale(1.2);
-        }
-
-        .navbar .nav-link {
-            color: black !important;
-            font-weight: 500;
-            font-size: 18px;
-        }
-
-        .navbar .nav-link:hover {
-            color: #FFD700 !important;
-        }
-
-        .nav-item.dropdown:hover .dropdown-menu {
-            display: block;
-        }
-
-        .dropdown-menu {
-            background-color: white;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            padding: 10px 0;
-        }
-
-        .dropdown-item {
-            color: #26346D;
-            padding: 10px 20px;
-            transition: background 0.3s ease-in-out;
-        }
-
-        .dropdown-item:hover {
-            background-color: #26346D;
-            color: white;
-        }
-
-        .navbar-right {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .navbar-toggler {
-            border: none;
-            padding: 0.5rem;
-            position: relative;
-            z-index: 1100;
-        }
-
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(0, 0, 0, 0.8)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-            width: 24px;
-            height: 24px;
-        }
-
-        .header-button-container {
-            display: none;
-        }
-
-        .header-button-container a {
-            display: block;
-        }
-
-        /* === HERO SECTION === */
-        .hero,
-        .hero-image {
-            width: 100%;
-            height: auto;
-        }
-
-        /* === GRID CONTAINERS === */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-            justify-items: center;
-        }
-
-        .cardbc,
-        .card {
-            background-color: white;
-            border: 2px solid #1d2951;
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .cardbc:hover,
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
-        }
-
-        .cardbc img,
-        .card img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            border: 3px solid #26346D;
-        }
-
-        .cardbc h3,
-        .card h3 {
-            font-size: 1.2rem;
-            color: #1d2951;
-            margin: 10px 0 5px;
-        }
-
-        .cardbc p,
-        .card p {
-            font-size: 1rem;
-            color: #555;
-            margin-bottom: 15px;
-        }
-
-        /* === SOCIAL ICONS === */
-        .social-icons {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .social-icons a {
-            color: #1d2951;
-            font-size: 1.2rem;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            color: #FFD700;
-            transform: scale(1.2);
-        }
-
-        /* === FOOTER === */
-        .footer {
-            background-color: #1A2B50;
-            padding: 20px;
-            color: white;
-            display: grid;
-            grid-template-columns: 1fr;
-            align-items: center;
-            text-align: center;
-            width: 100%;
-        }
-
-        .footer-logo-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .footer-logo {
-            height: 130px;
-            width: 130px;
-            margin-top: 5px;
-        }
-
-        .footer-social-icons {
-            display: flex;
-            gap: 5px;
-            justify-content: center;
-        }
-
-        .social-icon {
-            width: 30px;
-            height: 30px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .social-icon:hover {
-            transform: scale(1.2);
-        }
-
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: #FFD700;
-        }
-
-        /* === BUTTON IMAGE === */
-        .button-img {
-            width: 60px;
-            height: 50px;
-            margin-right: 5px;
-        }
-
-        /* === SHAPES CONTAINER === */
-        .shapes-container {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background: transparent;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-
-        .shape {
-            position: absolute;
-        }
-
-        .yellow-shape {
-            background-color: #FFC107;
-            opacity: 1;
-        }
-
-        .blue-shape {
-            background-color: #1E88E5;
-            opacity: 1;
-        }
-
-        .shape1 {
-            width: 400px;
-            height: 400px;
-            top: -50px;
-            left: -50px;
-            clip-path: polygon(10% 10%,
-                    40% 5%,
-                    70% 20%,
-                    90% 50%,
-                    70% 80%,
-                    30% 90%,
-                    10% 60%);
-        }
-
-        .shape2 {
-            width: 350px;
-            height: 350px;
-            top: -30px;
-            right: -30px;
-            clip-path: polygon(30% 10%,
-                    60% 0%,
-                    90% 30%,
-                    80% 70%,
-                    50% 90%,
-                    20% 80%,
-                    10% 40%);
-        }
-
-        .shape3 {
-            width: 300px;
-            height: 300px;
-            top: 50%;
-            left: -40px;
-            clip-path: polygon(15% 20%,
-                    50% 10%,
-                    80% 30%,
-                    90% 60%,
-                    60% 90%,
-                    20% 80%,
-                    5% 50%);
-        }
-
-        .shape4 {
-            width: 450px;
-            height: 450px;
-            bottom: -70px;
-            right: -70px;
-            clip-path: polygon(25% 15%,
-                    60% 5%,
-                    85% 25%,
-                    95% 55%,
-                    70% 85%,
-                    40% 95%,
-                    10% 65%);
-        }
-
-        /* === MEDIA QUERIES === */
-        @media (max-width: 768px) {
-
-            .shape1,
-            .shape2,
-            .shape3,
-            .shape4 {
-                transform: scale(0.7);
-            }
-
-            .shape1 {
-                width: 400px;
-                height: 400px;
-                top: -30px;
-                left: -30px;
-            }
-
-            .shape2 {
-                width: 350px;
-                height: 350px;
-                top: -20px;
-                right: -20px;
-            }
-
-            .shape3 {
-                width: 300px;
-                height: 300px;
-                left: -20px;
-            }
-
-            .shape4 {
-                width: 450px;
-                height: 450px;
-                bottom: -50px;
-                right: -50px;
-            }
-
-            header {
-                padding: 0.5rem;
-            }
-
-            .navbar-collapse {
-                background-color: white;
-                padding: 1rem;
-                border-radius: 5px;
-                margin-top: 0.5rem;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            }
-
-            .navbar-nav {
-                background-color: white;
-                padding: 1rem;
-                border-radius: 5px;
-            }
-
-            .dropdown-menu {
-                position: static;
-                width: 100%;
-                box-shadow: none;
-            }
-
-            .header-button-container {
-                display: block;
-            }
-
-            .header-button-mobile-hidden {
-                display: none;
-            }
-
-            .navbar-right {
-                gap: 1rem;
-            }
-
-            .navbar-toggler {
-                padding: 0.75rem;
-            }
-
-            .navbar-toggler-icon {
-                width: 30px;
-                height: 30px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .grid-container {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-        }
-    </style>
 </body>
-
 </html>

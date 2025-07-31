@@ -8,10 +8,625 @@
     <link rel="icon" type="image/x-icon" href="../imagini/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../style.css">
+    <style>
+        /* === GLOBAL STYLES === */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f9fafb;
+            margin: 0;
+            width: 100%;
+            overflow-x: hidden;
+            color: #333;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* === HEADER & NAVIGATION === */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .custom-navbar {
+            background-color: transparent;
+        }
+
+        .logo {
+            width: 100px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar-nav .nav-link {
+            color: #1d2951 !important;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 0.75rem 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #FFD700 !important;
+        }
+
+        .dropdown-menu {
+            background-color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown-item {
+            color: #1d2951;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #1d2951;
+            color: #ffffff;
+        }
+
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .header-button-container {
+            display: none;
+        }
+
+        .header-button {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .button-img {
+            width: 60px;
+            height: 50px;
+            transition: transform 0.3s ease;
+        }
+
+        .header-button:hover .button-img {
+            transform: scale(1.1);
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 0.5rem;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(29, 41, 81, 0.8)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+            width: 28px;
+            height: 28px;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            background-color: #1A2B50;
+            color: white;
+            padding: 40px 0;
+            width: 100%;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer-social-icons a:hover {
+            color: #FFD700;
+            transform: scale(1.2);
+        }
+
+        .footer-links {
+            text-align: right;
+        }
+
+        .footer-links h4 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FFD700;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #e0e0e0;
+        }
+
+        /* === MEDIA QUERIES === */
+        @media (max-width: 767px) {
+            .navbar-collapse {
+                background-color: white;
+                padding: 1rem;
+                border-radius: 5px;
+                margin-top: 0.5rem;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .navbar-nav {
+                background-color: white;
+                padding: 1rem;
+                border-radius: 5px;
+            }
+
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+            }
+
+            .header-button-container {
+                display: block;
+            }
+
+            .header-button-mobile-hidden {
+                display: none;
+            }
+
+            .navbar-right {
+                gap: 1rem;
+            }
+
+            .navbar-toggler {
+                padding: 0.75rem;
+            }
+
+            .navbar-toggler-icon {
+                width: 30px;
+                height: 30px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .footer-logo-container {
+                align-items: center;
+            }
+
+            .footer-links {
+                text-align: center;
+            }
+
+            .footer-links ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-logo {
+                width: 100px;
+            }
+
+            .footer-social-icons a {
+                font-size: 1.2rem;
+            }
+
+            .footer-links h4 {
+                font-size: 1.3rem;
+            }
+
+            .footer-links a {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* === ORIGINAL STYLES === */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f8fafc;
+            margin: 0;
+            text-align: center;
+            width: 100%;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #1d2951;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin: 2rem 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            color: #1d2951;
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 3rem 0 1.5rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #FFD700;
+            margin: 0.5rem auto;
+            border-radius: 2px;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            filter: brightness(0.6);
+        }
+
+        .hero-text {
+            padding: 2rem;
+            max-width: 800px;
+        }
+
+        .hero-text h1 {
+            color: #ffffff;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+        }
+
+        /* === BLOG SECTION === */
+        .blog-section {
+            padding: 3rem 0;
+            background-color: #f8fafc;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .blog-post {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .blog-content h3 {
+            font-size: 1.5rem;
+            color: #1d2951;
+            font-weight: 600;
+            margin: 0 0 0.5rem;
+        }
+
+        .blog-meta {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+
+        .blog-content p {
+            font-size: 1rem;
+            color: #4a5568;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .blog-read-more {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #1d2951;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            align-self: flex-start;
+        }
+
+        .blog-read-more:hover {
+            background-color: #FFD700;
+            color: #1d2951;
+        }
+
+        .blog-pagination {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .pagination-link {
+            padding: 0.5rem 1rem;
+            background-color: #1d2951;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .pagination-link:hover {
+            background-color: #FFD700;
+            color: #1d2951;
+        }
+
+        /* === SHAPES CONTAINER === */
+        .shapes-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .shape {
+            position: absolute;
+            animation: float 10s infinite ease-in-out;
+        }
+
+        .yellow-shape {
+            background: linear-gradient(45deg, #FFD700, #FFC107);
+            opacity: 0.7;
+        }
+
+        .blue-shape {
+            background: linear-gradient(45deg, #1E88E5, #1d2951);
+            opacity: 0.7;
+        }
+
+        .shape1 {
+            width: 400px;
+            height: 400px;
+            top: -50px;
+            left: -50px;
+            clip-path: polygon(10% 10%, 40% 5%, 70% 20%, 90% 50%, 70% 80%, 30% 90%, 10% 60%);
+        }
+
+        .shape2 {
+            width: 350px;
+            height: 350px;
+            top: -30px;
+            right: -30px;
+            clip-path: polygon(30% 10%, 60% 0%, 90% 30%, 80% 70%, 50% 90%, 20% 80%, 10% 40%);
+        }
+
+        .shape3 {
+            width: 300px;
+            height: 300px;
+            top: 50%;
+            left: -40px;
+            clip-path: polygon(15% 20%, 50% 10%, 80% 30%, 90% 60%, 60% 90%, 20% 80%, 5% 50%);
+        }
+
+        .shape4 {
+            width: 450px;
+            height: 450px;
+            bottom: -70px;
+            right: -70px;
+            clip-path: polygon(25% 15%, 60% 5%, 85% 25%, 95% 55%, 70% 85%, 40% 95%, 10% 65%);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* === MEDIA QUERIES === */
+        @media (max-width: 768px) {
+            .shape1, .shape2, .shape3, .shape4 {
+                transform: scale(0.7);
+            }
+
+            .shape1 {
+                width: 300px;
+                height: 300px;
+                top: -20px;
+                left: -20px;
+            }
+
+            .shape2 {
+                width: 250px;
+                height: 250px;
+                top: -10px;
+                right: -10px;
+            }
+
+            .shape3 {
+                width: 200px;
+                height: 200px;
+                left: -10px;
+            }
+
+            .shape4 {
+                width: 350px;
+                height: 350px;
+                bottom: -30px;
+                right: -30px;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+
+            .blog-image {
+                height: 150px;
+            }
+
+            .blog-content h3 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-text p {
+                font-size: 0.9rem;
+            }
+
+            .blog-image {
+                height: 120px;
+            }
+
+            .blog-content h3 {
+                font-size: 1.2rem;
+            }
+
+            .blog-content p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
-
-
+<body>
+    <!-- Header -->
     <header>
         <nav class="navbar navbar-expand-md custom-navbar navbar-light">
             <div class="container">
@@ -19,20 +634,14 @@
                     <img src="../imagini/logo.png" alt="Logo" class="logo">
                 </a>
                 <div class="navbar-right">
-                    <div class="header-button-container">
-                        <a href="https://forms.office.com/pages/responsepage.aspx?id=5B-0a6NAEEq2zTgnjniyGnmD2U03SgVHiVq-MjlrkaxUQjNNMEJTTUU3VUg1MDdNVEM4SFdTRzQ4MC4u&route=shorturl" class="header-button">
-                            <img src="../imagini/button.png" alt="Button" class="button-img">
-                        </a>
-                    </div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <!-- Despre Noi Dropdown -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="despreNoiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="despreNoiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Despre noi
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="despreNoiDropdown">
@@ -42,7 +651,6 @@
                                 <li><a class="dropdown-item" href="../desprenoi/galerie.html">Galerie</a></li>
                             </ul>
                         </li>
-                        <!-- Proiecte Dropdown -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="proiecteDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Proiecte
@@ -56,23 +664,19 @@
                                 <li><a class="dropdown-item" href="#">NEW</a></li>
                             </ul>
                         </li>
-                        <!-- Anunțuri -->
                         <li class="nav-item"><a class="nav-link" href="../anunturi.html">Anunțuri</a></li>
-                        <!-- Informații Utile Dropdown -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Informații utile
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="infoDropdown">
-                                <li><a class="dropdown-item" href="../informatii/blog.html">Blog</a></li>
-                                <li><a class="dropdown-item" href="../informatii/studentii.html">Studenții Reprezentanți</a></li>
-                                <li><a class="dropdown-item" href="../informatii/documente.html">Documente</a></li>
-                                <li><a class="dropdown-item" href="../informatii/proiectevechi.html">Proiecte Vechi</a></li>
+                                <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+                                <li><a class="dropdown-item" href="studentii.html">Studenții Reprezentanți</a></li>
+                                <li><a class="dropdown-item" href="documente.html">Documente</a></li>
+                                <li><a class="dropdown-item" href="proiectevechi.html">Proiecte Vechi</a></li>
                             </ul>
                         </li>
-                        <!-- FAQ -->
                         <li class="nav-item"><a class="nav-link" href="../faq.html">FAQ</a></li>
-                        <!-- Button -->
                         <li class="nav-item header-button-mobile-hidden">
                             <a href="https://forms.office.com/pages/responsepage.aspx?id=5B-0a6NAEEq2zTgnjniyGnmD2U03SgVHiVq-MjlrkaxUQjNNMEJTTUU3VUg1MDdNVEM4SFdTRzQ4MC4u&route=shorturl" class="header-button">
                                 <img src="../imagini/button.png" alt="Button" class="button-img">
@@ -83,30 +687,100 @@
             </div>
         </nav>
     </header>
+
+    <main>
+        <section class="hero">
+            <img src="../imagini/banner.jpg" alt="Blog Hero Image" class="hero-image">
+            <div class="hero-text">
+                <h1>Blog Liga ETc</h1>
+                <p>Descoperă ultimele noutăți, povești și sfaturi de la comunitatea Liga ETc</p>
+            </div>
+        </section>
+
+        <section class="blog-section">
+            <div class="container">
+                <div class="blog-grid">
+                    <article class="blog-post">
+                        <img src="../imagini/esu.jpg" alt="Blog Post 1" class="blog-image">
+                        <div class="blog-content">
+                            <h3>Proiectul ESU 2025: O experiență de neuitat</h3>
+                            <p class="blog-meta">Publicat pe 01 Iulie 2025 | Autor: Echipa Liga ETc</p>
+                            <p>Află detalii despre ediția din acest an a Evenimentului Studențesc Universitar (ESU),
+                                unde studenții au avut ocazia să participe la workshop-uri, conferințe și activități
+                                interactive...</p>
+                            <a href="post/esu-2025.html" class="blog-read-more">Citește mai mult</a>
+                        </div>
+                    </article>
+                    <article class="blog-post">
+                        <img src="../imagini/post2.jpg" alt="Blog Post 2" class="blog-image">
+                        <div class="blog-content">
+                            <h3>Cum să te implici în Liga ETc</h3>
+                            <p class="blog-meta">Publicat pe 25 Iunie 2025 | Autor: Maria Popescu</p>
+                            <p>Dorești să faci parte din comunita noastră? Descoperă pașii simpli pentru a te alătura și
+                                a contribui la proiectele noastre de impact...</p>
+                            <a href="post/join-liga-etc.html" class="blog-read-more">Citește mai mult</a>
+                        </div>
+                    </article>
+                    <article class="blog-post">
+                        <img src="../imagini/post3.jpg" alt="Blog Post 3" class="blog-image">
+                        <div class="blog-content">
+                            <h3>Retrospectiva anului 2024: Proiecte și realizări</h3>
+                            <p class="blog-meta">Publicat pe 15 Iunie 2025 | Autor: Andrei Ionescu</p>
+                            <p>Un rezumat al celor mai importante momente și proiecte din 2024, de la conferințe la
+                                inițiative studențești de succes...</p>
+                            <a href="post/retrospectiva-2024.html" class="blog-read-more">Citește mai mult</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="blog-pagination">
+                    <a href="#" class="pagination-link">Înapoi</a>
+                    <a href="#" class="pagination-link">Înainte</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="shapes-container">
+        <div class="shape yellow-shape shape1"></div>
+        <div class="shape blue-shape shape2"></div>
+        <div class="shape yellow-shape shape3"></div>
+        <div class="shape blue-shape shape4"></div>
+    </div>
+
+    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-logo-container">
-            <img src="../imagini/logo-white.png" alt="LIGA ETc Logo" class="footer-logo">
-            <div class="footer-social-icons">
-                <a href="https://www.facebook.com" target="_blank">
-                    <img src="../imagini/facebook-icon.png" alt="Facebook" class="social-icon">
-                </a>
-                <a href="https://www.instagram.com" target="_blank">
-                    <img src="../imagini/instagram-icon.png" alt="Instagram" class="social-icon">
-                </a>
-                <a href="https://www.tiktok.com" target="_blank">
-                    <img src="../imagini/tiktok-icon.png" alt="TikTok" class="social-icon">
-                </a>
-                <a href="mailto:contact@example.com">
-                    <img src="../imagini/email-icon.png" alt="Email" class="social-icon">
-                </a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo-container">
+                    <img src="../imagini/logo-white.png" alt="LIGA ETc Logo" class="footer-logo">
+                    <div class="footer-social-icons">
+                        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="mailto:contact@example.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Liga ETc</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Donează 3.5%</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Liga ETc. Toate drepturile rezervate.</p>
             </div>
         </div>
-        <div class="footer-links">
-            <p><a href="../contact.html">Contact</a></p>
-            <p><a href="#">Donează 3.5</a></p>
-        </div>
     </footer>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>

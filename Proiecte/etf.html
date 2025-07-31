@@ -1,95 +1,104 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liga ETc</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../imagini/logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 
-    <header>
-        <nav class="navbar navbar-expand-md custom-navbar navbar-light">
-            <div class="container">
-                <a href="../index.html">
-                    <img src="../imagini/logo.png" alt="Logo" class="logo">
-                </a>
-                <div class="navbar-right">
-                    <div class="header-button-container">
-                        <a href="https://forms.office.com/pages/responsepage.aspx?id=5B-0a6NAEEq2zTgnjniyGnmD2U03SgVHiVq-MjlrkaxUQjNNMEJTTUU3VUg1MDdNVEM4SFdTRzQ4MC4u&route=shorturl" class="header-button">
+<header>
+    <nav class="navbar navbar-expand-md custom-navbar navbar-light">
+        <div class="container">
+            <a href="../index.html">
+                <img src="../imagini/logo.png" alt="Logo" class="logo">
+            </a>
+            <div class="navbar-right">
+                <div class="header-button-container">
+                    <a href="https://forms.office.com/pages/responsepage.aspx?id=5B-0a6NAEEq2zTgnjniyGnmD2U03SgVHiVq-MjlrkaxUQjNNMEJTTUU3VUg1MDdNVEM4SFdTRzQ4MC4u&route=shorturl"
+                        class="header-button">
+                        <img src="../imagini/button.png" alt="Button" class="button-img">
+                    </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Despre Noi Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="despreNoiDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Despre noi
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="despreNoiDropdown">
+                            <li><a class="dropdown-item" href="../desprenoi/lsfetc.html">LSFETc</a></li>
+                            <li><a class="dropdown-item" href="../desprenoi/bc.html">Bc+Cc</a></li>
+                            <li><a class="dropdown-item" href="../desprenoi/departamente.html">Departamente</a></li>
+                            <li><a class="dropdown-item" href="../desprenoi/galerie.html">Galerie</a></li>
+                        </ul>
+                    </li>
+                    <!-- Proiecte Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="proiecteDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Proiecte
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="proiecteDropdown">
+                            <li><a class="dropdown-item" href="https://esu.lsfetc.ro">ESU</a></li>
+                            <li><a class="dropdown-item" href="#">EXCHANGE</a></li>
+                            <li><a class="dropdown-item" href="#">FTFMM</a></li>
+                            <li><a class="dropdown-item" href="#">MASA ROTUNDĂ</a></li>
+                            <li><a class="dropdown-item" href="#">ETF</a></li>
+                            <li><a class="dropdown-item" href="#">NEW</a></li>
+                        </ul>
+                    </li>
+                    <!-- Anunțuri -->
+                    <li class="nav-item"><a class="nav-link" href="../anunturi.html">Anunțuri</a></li>
+                    <!-- Informații Utile Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Informații utile
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="infoDropdown">
+                            <li><a class="dropdown-item" href="../informatii/blog.html">Blog</a></li>
+                            <li><a class="dropdown-item" href="../informatii/studentii.html">Studenții Reprezentanți</a>
+                            </li>
+                            <li><a class="dropdown-item" href="../informatii/documente.html">Documente</a></li>
+                            <li><a class="dropdown-item" href="../informatii/proiectevechi.html">Proiecte Vechi</a></li>
+                        </ul>
+                    </li>
+                    <!-- FAQ -->
+                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                    <!-- Button -->
+                    <li class="nav-item header-button-mobile-hidden">
+                        <a href="https://forms.office.com/pages/responsepage.aspx?id=5B-0a6NAEEq2zTgnjniyGnmD2U03SgVHiVq-MjlrkaxUQjNNMEJTTUU3VUg1MDdNVEM4SFdTRzQ4MC4u&route=shorturl"
+                            class="header-button">
                             <img src="../imagini/button.png" alt="Button" class="button-img">
                         </a>
-                    </div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Despre Noi Dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="despreNoiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Despre noi
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="despreNoiDropdown">
-                                <li><a class="dropdown-item" href="../desprenoi/lsfetc.html">LSFETc</a></li>
-                                <li><a class="dropdown-item" href="../desprenoi/bc.html">Bc+Cc</a></li>
-                                <li><a class="dropdown-item" href="../desprenoi/departamente.html">Departamente</a></li>
-                                <li><a class="dropdown-item" href="../desprenoi/galerie.html">Galerie</a></li>
-                            </ul>
-                        </li>
-                        <!-- Proiecte Dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="proiecteDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Proiecte
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="proiecteDropdown">
-                                <li><a class="dropdown-item" href="https://esu.lsfetc.ro">ESU</a></li>
-                                <li><a class="dropdown-item" href="#">EXCHANGE</a></li>
-                                <li><a class="dropdown-item" href="#">FTFMM</a></li>
-                                <li><a class="dropdown-item" href="#">MASA ROTUNDĂ</a></li>
-                                <li><a class="dropdown-item" href="#">ETF</a></li>
-                                <li><a class="dropdown-item" href="#">NEW</a></li>
-                            </ul>
-                        </li>
-                        <!-- Anunțuri -->
-                        <li class="nav-item"><a class="nav-link" href="../anunturi.html">Anunțuri</a></li>
-                        <!-- Informații Utile Dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Informații utile
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="infoDropdown">
-                                <li><a class="dropdown-item" href="../informatii/blog.html">Blog</a></li>
-                                <li><a class="dropdown-item" href="../informatii/studentii.html">Studenții Reprezentanți</a></li>
-                                <li><a class="dropdown-item" href="../informatii/documente.html">Documente</a></li>
-                                <li><a class="dropdown-item" href="../informatii/proiectevechi.html">Proiecte Vechi</a></li>
-                            </ul>
-                        </li>
-                        <!-- FAQ -->
-                        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-                        <!-- Button -->
-                        <li class="nav-item header-button-mobile-hidden">
-                            <a href="https://forms.office.com/pages/responsepage.aspx?id=5B-0a6NAEEq2zTgnjniyGnmD2U03SgVHiVq-MjlrkaxUQjNNMEJTTUU3VUg1MDdNVEM4SFdTRzQ4MC4u&route=shorturl" class="header-button">
-                                <img src="../imagini/button.png" alt="Button" class="button-img">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </header>
-        
+        </div>
+    </nav>
+</header>
+
 
 <body class="page-etf">
 
     <div class="position-relative">
         <img src="../imagini/proiecte/etf1.png" class="img-fluid w-100" alt="Photo 1">
 
-        <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+        <div class="position-absolute top-0 start-0 w-100 h-100"
+            style="background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
 
         <div class="position-absolute top-50 start-50 translate-middle text-white text-center px-3" style="z-index: 2;">
             <h1 class="fw-bold display-5">ELECTROTECH FEST</h1>
@@ -123,7 +132,7 @@
     </section>
 
     <section class="container mt-5">
-        <h2 class="text-primary" >Despre Proiect</h2>
+        <h2 class="text-primary">Despre Proiect</h2>
         <div class="row align-items-center">
             <div class="col-md-6 mb-3 mb-md-0">
                 <img src="../imagini/bc.png" class="img-fluid rounded" alt="Conferință">
@@ -135,71 +144,151 @@
             </div>
         </div>
     </section>
-    
 
-    <section class="container mt-5">
-        <h2 class="text-primary mb-4">Testimoniale</h2>
-        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+
+    <section class="container testimonials-section my-5">
+        <h2 class="fw-bold text-primary mb-5">Ce spun studenții noștri</h2>
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="row justify-content-center">
-                        <div class="col-md-4 d-flex justify-content-center">
-                            <div class="card testimonial-card text-center shadow p-4">
-                                <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mb-3" alt="Student 1">
-                                <p class="card-text">"A fost o experiență grozavă!"</p>
-                                <h5 class="card-title mt-2">Andrei Popescu</h5>
+                        <div class="col-lg-4 col-md-8 col-sm-10 d-flex justify-content-center">
+                            <div class="card testimonial-card shadow-sm p-4">
+                                <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+                                <p class="card-text">"A fost o experiență grozavă, care m-a ajutat să cresc profesional
+                                    și personal!"</p>
+                                <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mt-3" alt="Student 1">
+                                <h5 class="card-title mt-3">Andrei Popescu</h5>
                                 <p class="text-muted">Student</p>
                             </div>
                         </div>
-                        <div class="col-md-4 d-flex justify-content-center">
-                            <div class="card testimonial-card text-center shadow p-4">
-                                <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mb-3" alt="Student 2">
-                                <p class="card-text">"Mi-a plăcut modul de predare și susținerea profesorilor."</p>
-                                <h5 class="card-title mt-2">Ioana Georgescu</h5>
+                        <div class="col-lg-4 col-md-8 col-sm-10 d-flex justify-content-center d-none d-lg-block">
+                            <div class="card testimonial-card shadow-sm p-4">
+                                <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+                                <p class="card-text">"LSFETc oferă un mediu excelent pentru dezvoltare și networking."
+                                </p>
+                                <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mt-3" alt="Student 2">
+                                <h5 class="card-title mt-3">Ioana Georgescu</h5>
                                 <p class="text-muted">Student</p>
                             </div>
                         </div>
-                        <div class="col-md-4 d-flex justify-content-center">
-                            <div class="card testimonial-card text-center shadow p-4">
-                                <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mb-3" alt="Student 3">
-                                <p class="card-text">"Recomand cu încredere tuturor celor interesați!"</p>
-                                <h5 class="card-title mt-2">Mihai Ionescu</h5>
+                        <div class="col-lg-4 col-md-8 col-sm-10 d-flex justify-content-center d-none d-lg-block">
+                            <div class="card testimonial-card shadow-sm p-4">
+                                <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+                                <p class="card-text">"Recomand cu încredere tuturor celor interesați de implicare
+                                    studențească!"</p>
+                                <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mt-3" alt="Student 3">
+                                <h5 class="card-title mt-3">Mihai Ionescu</h5>
                                 <p class="text-muted">Absolvent</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Slide 2 -->
                 <div class="carousel-item">
                     <div class="row justify-content-center">
-                        <div class="col-md-4 d-flex justify-content-center">
-                            <div class="card testimonial-card text-center shadow p-4">
-                                <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mb-3" alt="Student 4">
-                                <p class="card-text">"Profesorii sunt foarte implicați."</p>
-                                <h5 class="card-title mt-2">Elena Dobre</h5>
+                        <div class="col-lg-4 col-md-8 col-sm-10 d-flex justify-content-center">
+                            <div class="card testimonial-card shadow-sm p-4">
+                                <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+                                <p class="card-text">"Am învățat ce înseamnă munca în echipă și leadership-ul."</p>
+                                <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mt-3" alt="Student 4">
+                                <h5 class="card-title mt-3">Elena Dobre</h5>
                                 <p class="text-muted">Student</p>
                             </div>
                         </div>
-                        <div class="col-md-4 d-flex justify-content-center">
-                            <div class="card testimonial-card text-center shadow p-4">
-                                <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mb-3" alt="Student 5">
-                                <p class="card-text">"Mediul de învățare este excelent!"</p>
-                                <h5 class="card-title mt-2">Vlad Marinescu</h5>
+                        <div class="col-lg-4 col-md-8 col-sm-10 d-flex justify-content-center d-none d-lg-block">
+                            <div class="card testimonial-card shadow-sm p-4">
+                                <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+                                <p class="card-text">"Mediul de învățare și susținerea colegilor sunt de neprețuit!"</p>
+                                <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mt-3" alt="Student 5">
+                                <h5 class="card-title mt-3">Vlad Marinescu</h5>
                                 <p class="text-muted">Student</p>
                             </div>
                         </div>
-                        <div class="col-md-4 d-flex justify-content-center">
-                            <div class="card testimonial-card text-center shadow p-4">
-                                <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mb-3" alt="Student 6">
-                                <p class="card-text">"Am legat prietenii frumoase aici."</p>
-                                <h5 class="card-title mt-2">Cristina Ilie</h5>
+                        <div class="col-lg-4 col-md-8 col-sm-10 d-flex justify-content-center d-none d-lg-block">
+                            <div class="card testimonial-card shadow-sm p-4">
+                                <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+                                <p class="card-text">"Am legat prietenii și am câștigat experiențe memorabile."</p>
+                                <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mt-3" alt="Student 6">
+                                <h5 class="card-title mt-3">Cristina Ilie</h5>
                                 <p class="text-muted">Studentă</p>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-8 col-sm-10 d-flex justify-content-center">
+                            <div class="card testimonial-card shadow-sm p-4">
+                                <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+                                <p class="card-text">"LSFETc oferă un mediu excelent pentru dezvoltare și networking."
+                                </p>
+                                <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mt-3" alt="Student 2">
+                                <h5 class="card-title mt-3">Ioana Georgescu</h5>
+                                <p class="text-muted">Student</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-8 col-sm-10 d-flex justify-content-center d-none d-lg-block">
+                            <div class="card testimonial-card shadow-sm p-4">
+                                <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+                                <p class="card-text">"Recomand cu încredere tuturor celor interesați de implicare
+                                    studențească!"</p>
+                                <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mt-3" alt="Student 3">
+                                <h5 class="card-title mt-3">Mihai Ionescu</h5>
+                                <p class="text-muted">Absolvent</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-8 col-sm-10 d-flex justify-content-center d-none d-lg-block">
+                            <div class="card testimonial-card shadow-sm p-4">
+                                <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+                                <p class="card-text">"A fost o experiență grozavă, care m-a ajutat să cresc profesional
+                                    și personal!"</p>
+                                <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mt-3" alt="Student 1">
+                                <h5 class="card-title mt-3">Andrei Popescu</h5>
+                                <p class="text-muted">Student</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-8 col-sm-10 d-flex justify-content-center">
+                            <div class="card testimonial-card shadow-sm p-4">
+                                <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+                                <p class="card-text">"Mediul de învățare și susținerea colegilor sunt de neprețuit!"</p>
+                                <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mt-3" alt="Student 5">
+                                <h5 class="card-title mt-3">Vlad Marinescu</h5>
+                                <p class="text-muted">Student</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-8 col-sm-10 d-flex justify-content-center d-none d-lg-block">
+                            <div class="card testimonial-card shadow-sm p-4">
+                                <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+                                <p class="card-text">"Am legat prietenii și am câștigat experiențe memorabile."</p>
+                                <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mt-3" alt="Student 6">
+                                <h5 class="card-title mt-3">Cristina Ilie</h5>
+                                <p class="text-muted">Studentă</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-8 col-sm-10 d-flex justify-content-center d-none d-lg-block">
+                            <div class="card testimonial-card shadow-sm p-4">
+                                <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+                                <p class="card-text">"Am învățat ce înseamnă munca în echipă și leadership-ul."</p>
+                                <img src="imagini/slider1.jpg" class="rounded-circle mx-auto mt-3" alt="Student 4">
+                                <h5 class="card-title mt-3">Elena Dobre</h5>
+                                <p class="text-muted">Student</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </section>
 
@@ -228,31 +317,895 @@
 
 
 
+    <style>
+        /* === GLOBAL STYLES === */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f9fafb;
+            margin: 0;
+            width: 100%;
+            overflow-x: hidden;
+            color: #333;
+            text-align: center;
+            line-height: 1.6;
+        }
 
+        h2 {
+            color: #1d2951;
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        /* === HEADER & NAVIGATION === */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .custom-navbar {
+            background-color: transparent;
+        }
+
+        .logo {
+            width: 100px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar-nav .nav-link {
+            color: #1d2951 !important;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 0.75rem 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #FFD700 !important;
+        }
+
+        .dropdown-menu {
+            background-color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown-item {
+            color: #1d2951;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #1d2951;
+            color: #ffffff;
+        }
+
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .header-button-container {
+            display: none;
+        }
+
+        .header-button {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .button-img {
+            width: 60px;
+            height: 50px;
+            transition: transform 0.3s ease;
+        }
+
+        .header-button:hover .button-img {
+            transform: scale(1.1);
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 0.5rem;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(29, 41, 81, 0.8)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+            width: 28px;
+            height: 28px;
+        }
+
+        /* === BANNER SECTION === */
+        .banner-section {
+            position: relative;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .banner-section img {
+            object-fit: cover;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+            z-index: 2;
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 3;
+            padding: 20px;
+        }
+
+        .banner-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .banner-content p {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .banner-content .btn {
+            background-color: #007bff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .banner-content .btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* === ABOUT SECTION === */
+        .about-section {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+        }
+
+        .about-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .about-section img {
+            max-height: 300px;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* === STATISTICS SECTION === */
+        .statistics-section {
+            background-color: #e9ecef;
+            padding: 60px 0;
+            width: 100%;
+        }
+
+        .statistics-section h2 {
+            font-size: 2rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1d2951;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-text {
+            font-size: 1rem;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .statistics-section i {
+            color: #007bff;
+        }
+
+        /* === ORGANIZATIONS SECTION === */
+        .organizations-section {
+            padding: 40px 0;
+        }
+
+        .organizations {
+            margin-top: 20px;
+        }
+
+        .org-card {
+            background-color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .org-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .org-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .org-card h4 {
+            font-size: 1.25rem;
+            color: #1d2951;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .org-card .btn {
+            font-size: 0.9rem;
+            padding: 8px 16px;
+            border-color: #1d2951;
+            color: #1d2951;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .org-card .btn:hover {
+            background-color: #1d2951;
+            color: #FFD700;
+            border-color: #1d2951;
+        }
+
+        /* === TESTIMONIALS SECTION === */
+        .testimonials-section {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            height: 100%;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .testimonial-card img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #007bff;
+            margin-top: 15px;
+        }
+
+        .testimonial-card .card-text {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-card .card-title {
+            font-size: 1.1rem;
+            color: #1d2951;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-card .text-muted {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            margin: 0 10px;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-size: 50%;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            background-color: #1A2B50;
+            color: white;
+            padding: 40px 0;
+            width: 100%;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer-social-icons a:hover {
+            color: #FFD700;
+            transform: scale(1.2);
+        }
+
+        .footer-links {
+            text-align: right;
+        }
+
+        .footer-links h4 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FFD700;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #e0e0e0;
+        }
+
+        /* === LOADER === */
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .spinner {
+            --size: 30px;
+            --first-block-clr: #005bba;
+            --second-block-clr: #fed500;
+            --clr: #111;
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+
+        .spinner::after,
+        .spinner::before {
+            box-sizing: border-box;
+            position: absolute;
+            content: "";
+            width: var(--size);
+            height: var(--size);
+            top: 50%;
+            animation: up 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+            left: 50%;
+            background: var(--first-block-clr);
+        }
+
+        .spinner::after {
+            background: var(--second-block-clr);
+            top: calc(50% - var(--size));
+            left: calc(50% - var(--size));
+            animation: down 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+        }
+
+        @keyframes down {
+            0%, 100% { transform: none; }
+            25% { transform: translateX(100%); }
+            50% { transform: translateX(100%) translateY(100%); }
+            75% { transform: translateY(100%); }
+        }
+
+        @keyframes up {
+            0%, 100% { transform: none; }
+            25% { transform: translateX(-100%); }
+            50% { transform: translateX(-100%) translateY(-100%); }
+            75% { transform: translateY(-100%); }
+        }
+
+        /* === MEDIA QUERIES === */
+        @media (min-width: 992px) {
+            .organizations .row {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .banner-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .banner-content p {
+                font-size: 1.1rem;
+            }
+
+            .banner-content .btn {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+
+            .about-section h2 {
+                font-size: 1.75rem;
+                text-align: center;
+            }
+
+            .about-section p {
+                font-size: 1rem;
+                text-align: center;
+            }
+
+            .about-section img {
+                max-height: 250px;
+            }
+
+            .statistics-section h2 {
+                font-size: 1.75rem;
+                text-align: center;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .stat-text {
+                font-size: 0.9rem;
+            }
+
+            .org-card h4 {
+                font-size: 1.1rem;
+            }
+
+            .org-card img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .testimonial-card .card-text {
+                font-size: 0.9rem;
+            }
+
+            .testimonial-card .card-title {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .banner-section {
+                min-height: 400px;
+            }
+
+            .banner-content h1 {
+                font-size: 2rem;
+            }
+
+            .banner-content p {
+                font-size: 1rem;
+            }
+
+            .banner-content .btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+
+            .about-section {
+                padding: 30px 0;
+            }
+
+            .about-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .about-section p {
+                font-size: 0.9rem;
+            }
+
+            .statistics-section {
+                padding: 40px 0;
+            }
+
+            .statistics-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 1.8rem;
+            }
+
+            .stat-text {
+                font-size: 0.8rem;
+            }
+
+            .statistics-section i {
+                font-size: 1.5rem;
+            }
+
+            .organizations-section {
+                padding: 30px 0;
+            }
+
+            .org-card img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .org-card h4 {
+                font-size: 1rem;
+            }
+
+            .org-card .btn {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+
+            .testimonials-section {
+                padding: 40px 0;
+            }
+
+            .testimonial-card img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .testimonial-card .card-text {
+                font-size: 0.85rem;
+            }
+
+            .testimonial-card .card-title {
+                font-size: 0.95rem;
+            }
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                width: 30px;
+                height: 30px;
+            }
+
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                width: 15px;
+                height: 15px;
+            }
+
+            .navbar-collapse {
+                background-color: white;
+                padding: 1rem;
+                border-radius: 5px;
+                margin-top: 0.5rem;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .navbar-nav {
+                background-color: white;
+                padding: 1rem;
+                border-radius: 5px;
+            }
+
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+            }
+
+            .header-button-container {
+                display: block;
+            }
+
+            .header-button-mobile-hidden {
+                display: none;
+            }
+
+            .navbar-right {
+                gap: 1rem;
+            }
+
+            .navbar-toggler {
+                padding: 0.75rem;
+            }
+
+            .navbar-toggler-icon {
+                width: 30px;
+                height: 30px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .footer-logo-container {
+                align-items: center;
+            }
+
+            .footer-links {
+                text-align: center;
+            }
+
+            .footer-links ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .banner-section {
+                min-height: 350px;
+            }
+
+            .banner-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .banner-content p {
+                font-size: 0.9rem;
+            }
+
+            .banner-content .btn {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+
+            .about-section {
+                padding: 20px 0;
+            }
+
+            .about-section h2 {
+                font-size: 1.25rem;
+            }
+
+            .about-section p {
+                font-size: 0.85rem;
+            }
+
+            .about-section img {
+                max-height: 200px;
+            }
+
+            .statistics-section {
+                padding: 30px 0;
+            }
+
+            .statistics-section h2 {
+                font-size: 1.25rem;
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+
+            .stat-text {
+                font-size: 0.7rem;
+            }
+
+            .statistics-section i {
+                font-size: 1.2rem;
+            }
+
+            .org-card img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .org-card h4 {
+                font-size: 0.9rem;
+            }
+
+            .org-card .btn {
+                font-size: 0.75rem;
+                padding: 5px 10px;
+            }
+
+            .testimonials-section {
+                padding: 30px 0;
+            }
+
+            .testimonials-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .testimonial-card .card-text {
+                font-size: 0.8rem;
+            }
+
+            .testimonial-card .card-title {
+                font-size: 0.9rem;
+            }
+
+            .testimonial-card .text-muted {
+                font-size: 0.8rem;
+            }
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                width: 25px;
+                height: 25px;
+            }
+
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                width: 12px;
+                height: 12px;
+            }
+
+            .footer-logo {
+                width: 100px;
+            }
+
+            .footer-social-icons a {
+                font-size: 1.2rem;
+            }
+
+            .footer-links h4 {
+                font-size: 1.3rem;
+            }
+
+            .footer-links a {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
 
-        <footer class="footer">
-            <div class="footer-logo-container">
-                <img src="../imagini/logo-white.png" alt="LIGA ETc Logo" class="footer-logo">
-                <div class="footer-social-icons">
-                    <a href="https://www.facebook.com" target="_blank">
-                        <img src="../imagini/facebook-icon.png" alt="Facebook" class="social-icon">
-                    </a>
-                    <a href="https://www.instagram.com" target="_blank">
-                        <img src="../imagini/instagram-icon.png" alt="Instagram" class="social-icon">
-                    </a>
-                    <a href="https://www.tiktok.com" target="_blank">
-                        <img src="../imagini/tiktok-icon.png" alt="TikTok" class="social-icon">
-                    </a>
-                    <a href="mailto:contact@example.com">
-                        <img src="../imagini/email-icon.png" alt="Email" class="social-icon">
-                    </a>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo-container">
+                    <img src="../imagini/logo-white.png" alt="LIGA ETc Logo" class="footer-logo">
+                    <div class="footer-social-icons">
+                        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="mailto:contact@example.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Liga ETc</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Donează 3.5%</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-links">
-                <p><a href="../contact.html">Contact</a></p>
-                <p><a href="#">Donează 3.5</a></p>
+            <div class="footer-bottom">
+                <p>© 2025 Liga ETc. Toate drepturile rezervate.</p>
             </div>
-        </footer>
+        </div>
+    </footer>
+</body>
+
+</html>

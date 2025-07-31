@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../imagini/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-md custom-navbar navbar-light">
@@ -17,20 +19,16 @@
                     <img src="../imagini/logo.png" alt="Logo" class="logo">
                 </a>
                 <div class="navbar-right">
-                    <div class="header-button-container">
-                        <a href="YOUR_LINK_HERE" class="header-button">
-                            <img src="../imagini/button.png" alt="Button" class="button-img">
-                        </a>
-                    </div>
+
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <!-- Despre Noi Dropdown -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="despreNoiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="despreNoiDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Despre noi
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="despreNoiDropdown">
@@ -40,9 +38,9 @@
                                 <li><a class="dropdown-item" href="galerie.html">Galerie</a></li>
                             </ul>
                         </li>
-                        <!-- Proiecte Dropdown -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="proiecteDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="proiecteDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Proiecte
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="proiecteDropdown">
@@ -54,23 +52,22 @@
                                 <li><a class="dropdown-item" href="#">NEW</a></li>
                             </ul>
                         </li>
-                        <!-- Anunțuri -->
                         <li class="nav-item"><a class="nav-link" href="../anunturi.html">Anunțuri</a></li>
-                        <!-- Informații Utile Dropdown -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Informații utile
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="infoDropdown">
                                 <li><a class="dropdown-item" href="../informatii/blog.html">Blog</a></li>
-                                <li><a class="dropdown-item" href="../informatii/studentii.html">Studenții Reprezentanți</a></li>
+                                <li><a class="dropdown-item" href="../informatii/studentii.html">Studenții
+                                        Reprezentanți</a></li>
                                 <li><a class="dropdown-item" href="../informatii/documente.html">Documente</a></li>
-                                <li><a class="dropdown-item" href="../informatii/proiectevechi.html">Proiecte Vechi</a></li>
+                                <li><a class="dropdown-item" href="../informatii/proiectevechi.html">Proiecte Vechi</a>
+                                </li>
                             </ul>
                         </li>
-                        <!-- FAQ -->
                         <li class="nav-item"><a class="nav-link" href="../faq.html">FAQ</a></li>
-                        <!-- Button -->
                         <li class="nav-item header-button-mobile-hidden">
                             <a href="YOUR_LINK_HERE" class="header-button">
                                 <img src="../imagini/button.png" alt="Button" class="button-img">
@@ -81,70 +78,436 @@
             </div>
         </nav>
     </header>
-        <section class="hero">
-            <img src="../imagini/bc.png" alt="Liga ETc" class="hero-image">
+
+    <section class="hero">
+        <img src="../imagini/bc.png" alt="Liga ETc" class="hero-image">
+    </section>
+
+    <main>
+        <section class="departments-container">
+            <div class="department-card">
+                <img src="../imagini/repre.jpg" alt="Reprezentare" class="department-image">
+                <h3>Departamentul Reprezentare</h3>
+                <p>Reprezintă interesele studenților, promovând comunicarea dintre aceștia și conducerea facultății, și organizează activități pentru susținerea drepturilor studențești.</p>
+            </div>
+
+            <div class="department-card">
+                <img src="../imagini/fr.jpg" alt="Fundraising" class="department-image">
+                <h3>Departamentul Fundraising</h3>
+                <p>Se ocupă de atragerea de fonduri pentru proiectele și activitățile organizației prin parteneriate, sponsorizări și evenimente de strângere de fonduri.</p>
+            </div>
+
+            <div class="department-card">
+                <img src="../imagini/img.jpg" alt="Imagine" class="department-image">
+                <h3>Departamentul Imagine</h3>
+                <p>Creează conținut vizual atractiv și gestionează imaginea publică a organizației prin campanii de promovare și materiale grafice creative.</p>
+            </div>
+
+            <div class="department-card">
+                <img src="../imagini/pr.jpg" alt="Relații Publice" class="department-image">
+                <h3>Departamentul Relații Publice</h3>
+                <p>Construiește și menține relații cu partenerii externi, organizează evenimente și comunică activitățile organizației către publicul larg.</p>
+            </div>
+
+            <div class="department-card">
+                <img src="../imagini/hr.jpg" alt="Resurse Umane" class="department-image">
+                <h3>Departamentul Resurse Umane</h3>
+                <p>Coordonează recrutarea, formarea și motivarea membrilor, asigurând o echipă unită și eficientă pentru toate proiectele organizației.</p>
+            </div>
         </section>
+    </main>
 
-        <main>
-            <section class="departments-container">
-                <div class="department-card">
-                    <img src="../imagini/repre.jpg" alt="Reprezentare">
-                    <h3>Departamentul Reprezentare</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    <!-- Footer (unchanged) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo-container">
+                    <img src="../imagini/logo-white.png" alt="LIGA ETc Logo" class="footer-logo">
+                    <div class="footer-social-icons">
+                        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="mailto:YOUR_EMAIL_HERE" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
                 </div>
-                
-                <div class="department-card">
-                    <img src="../imagini/fr.jpg" alt="Fundraising">
-                    <h3>Departamentul Fundraising</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                </div>
-    
-                <div class="department-card">
-                    <img src="../imagini/img.jpg" alt="Imagine">
-                    <h3>Departamentul Imagine</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                </div>
-    
-                <div class="department-card">
-                    <img src="../imagini/pr.jpg" alt="Relatii Publice">
-                    <h3>Departamentul Relații Publice</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                </div>
-    
-                <div class="department-card">
-                    <img src="../imagini/hr.jpg" alt="Resurse Umane">
-                    <h3>Departamentul Resurse Umane</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                </div>
-            </section>
-        </main>
-    
-
-
-        <footer class="footer">
-            <div class="footer-logo-container">
-                <img src="../imagini/logo-white.png" alt="LIGA ETc Logo" class="footer-logo">
-                <div class="footer-social-icons">
-                    <a href="https://www.facebook.com" target="_blank">
-                        <img src="../imagini/facebook-icon.png" alt="Facebook" class="social-icon">
-                    </a>
-                    <a href="https://www.instagram.com" target="_blank">
-                        <img src="../imagini/instagram-icon.png" alt="Instagram" class="social-icon">
-                    </a>
-                    <a href="https://www.tiktok.com" target="_blank">
-                        <img src="../imagini/tiktok-icon.png" alt="TikTok" class="social-icon">
-                    </a>
-                    <a href="mailto:contact@example.com">
-                        <img src="../imagini/email-icon.png" alt="Email" class="social-icon">
-                    </a>
+                <div class="footer-links">
+                    <h4>Liga ETc</h4>
+                    <ul>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="#">Donează 3.5%</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-links">
-                <p><a href="../contact.html">Contact</a></p>
-                <p><a href="#">Donează 3.5</a></p>
+            <div class="footer-bottom">
+                <p>© 2025 Liga ETc. Toate drepturile rezervate.</p>
             </div>
-        </footer>
-    
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    </body>
-    </html>
+        </div>
+    </footer>
+
+    <style>
+        /* === GLOBAL STYLES === */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f8fafc;
+            margin: 0;
+            text-align: center;
+            width: 100%;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* === HEADER & NAVIGATION (unchanged) === */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .custom-navbar {
+            background-color: transparent;
+        }
+
+        .logo {
+            width: 100px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar-nav .nav-link {
+            color: #1d2951 !important;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 0.75rem 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #FFD700 !important;
+        }
+
+        .dropdown-menu {
+            background-color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown-item {
+            color: #1d2951;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #1d2951;
+            color: #ffffff;
+        }
+
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .header-button-container {
+            display: none;
+        }
+
+        .header-button {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .button-img {
+            width: 60px;
+            height: 50px;
+            transition: transform 0.3s ease;
+        }
+
+        .header-button:hover .button-img {
+            transform: scale(1.1);
+        }
+
+        .header-button-mobile-hidden {
+            display: block;
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 0.5rem;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(29, 41, 81, 0.8)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+            width: 28px;
+            height: 28px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            max-height: 500px;
+            border-bottom: 4px solid #FFD700;
+        }
+
+        /* === DEPARTMENTS SECTION === */
+        .departments-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .department-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 1.5rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .department-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .department-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border: 2px solid #f8fafc;
+        }
+
+        .department-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1d2951;
+            margin-bottom: 1rem;
+        }
+
+        .department-card p {
+            font-size: 1rem;
+            color: #4b5e7a;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0 1rem 1rem;
+        }
+
+        /* === FOOTER (unchanged) === */
+        .footer {
+            background-color: #1A2B50;
+            color: white;
+            padding: 40px 0;
+            width: 100%;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer-social-icons a:hover {
+            color: #FFD700;
+            transform: scale(1.2);
+        }
+
+        .footer-links {
+            text-align: right;
+        }
+
+        .footer-links h4 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FFD700;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #e0e0e0;
+        }
+
+        /* === MEDIA QUERIES === */
+        @media (max-width: 768px) {
+            .navbar-collapse {
+                background-color: #ffffff;
+                padding: 1rem;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                margin-top: 0.5rem;
+            }
+
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+            }
+
+            .header-button-container {
+                display: block;
+            }
+
+            .header-button-mobile-hidden {
+                display: none;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .footer-logo-container {
+                align-items: center;
+            }
+
+            .footer-links {
+                text-align: center;
+            }
+
+            .footer-links ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .departments-container {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
+            }
+
+            .department-card {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-logo {
+                width: 100px;
+            }
+
+            .footer-social-icons a {
+                font-size: 1.2rem;
+            }
+
+            .footer-links h4 {
+                font-size: 1.3rem;
+            }
+
+            .footer-links a {
+                font-size: 0.9rem;
+            }
+
+            .department-image {
+                height: 150px;
+            }
+
+            .department-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .department-card p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

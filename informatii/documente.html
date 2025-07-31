@@ -9,40 +9,378 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../style.css">
+    <style>
+        /* === GLOBAL STYLES === */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f9fafb;
+            margin: 0;
+            width: 100%;
+            overflow-x: hidden;
+            color: #333;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* === HEADER & NAVIGATION === */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .custom-navbar {
+            background-color: transparent;
+        }
+
+        .logo {
+            width: 100px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar-nav .nav-link {
+            color: #1d2951 !important;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 0.75rem 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #FFD700 !important;
+        }
+
+        .dropdown-menu {
+            background-color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown-item {
+            color: #1d2951;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #1d2951;
+            color: #ffffff;
+        }
+
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .header-button-container {
+            display: none;
+        }
+
+        .header-button {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .button-img {
+            width: 60px;
+            height: 50px;
+            transition: transform 0.3s ease;
+        }
+
+        .header-button:hover .button-img {
+            transform: scale(1.1);
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 0.5rem;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(29, 41, 81, 0.8)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+            width: 28px;
+            height: 28px;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            background-color: #1A2B50;
+            color: white;
+            padding: 40px 0;
+            width: 100%;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer-social-icons a:hover {
+            color: #FFD700;
+            transform: scale(1.2);
+        }
+
+        .footer-links {
+            text-align: right;
+        }
+
+        .footer-links h4 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FFD700;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #e0e0e0;
+        }
+
+        /* === MEDIA QUERIES === */
+        @media (max-width: 767px) {
+            .navbar-collapse {
+                background-color: white;
+                padding: 1rem;
+                border-radius: 5px;
+                margin-top: 0.5rem;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .navbar-nav {
+                background-color: white;
+                padding: 1rem;
+                border-radius: 5px;
+            }
+
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+            }
+
+            .header-button-container {
+                display: block;
+            }
+
+            .header-button-mobile-hidden {
+                display: none;
+            }
+
+            .navbar-right {
+                gap: 1rem;
+            }
+
+            .navbar-toggler {
+                padding: 0.75rem;
+            }
+
+            .navbar-toggler-icon {
+                width: 30px;
+                height: 30px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .footer-logo-container {
+                align-items: center;
+            }
+
+            .footer-links {
+                text-align: center;
+            }
+
+            .footer-links ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-logo {
+                width: 100px;
+            }
+
+            .footer-social-icons a {
+                font-size: 1.2rem;
+            }
+
+            .footer-links h4 {
+                font-size: 1.3rem;
+            }
+
+            .footer-links a {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* === CONTENT STYLES === */
+        .container {
+            max-width: 1200px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 2rem;
+        }
+
+        .doc-button {
+            display: block;
+            width: 100%;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background-color: #1a2a44;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border-radius: 10px;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .doc-button:hover {
+            background-color: #0d1e33;
+            transform: translateY(-2px);
+        }
+
+        .doc-button small {
+            font-size: 0.85rem;
+            color: #e9ecef;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .doc-button {
+                font-size: 1rem;
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .doc-button {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
 </head>
-
-
+<body>
+    <!-- Header -->
     <header>
         <nav class="navbar navbar-expand-md custom-navbar navbar-light">
             <div class="container">
-                <a href="../index.html">
-                    <img src="../imagini/logo.png" alt="Logo" class="logo">
+                <a href="index.html">
+                    <img src="imagini/logo.png" alt="Logo" class="logo">
                 </a>
                 <div class="navbar-right">
-                    <div class="header-button-container">
-                        <a href="https://forms.office.com/pages/responsepage.aspx?id=5B-0a6NAEEq2zTgnjniyGnmD2U03SgVHiVq-MjlrkaxUQjNNMEJTTUU3VUg1MDdNVEM4SFdTRzQ4MC4u&route=shorturl" class="header-button">
-                            <img src="../imagini/button.png" alt="Button" class="button-img">
-                        </a>
-                    </div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <!-- Despre Noi Dropdown -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="despreNoiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="despreNoiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Despre noi
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="despreNoiDropdown">
-                                <li><a class="dropdown-item" href="../desprenoi/lsfetc.html">LSFETc</a></li>
-                                <li><a class="dropdown-item" href="../desprenoi/bc.html">Bc+Cc</a></li>
-                                <li><a class="dropdown-item" href="../desprenoi/departamente.html">Departamente</a></li>
-                                <li><a class="dropdown-item" href="../desprenoi/galerie.html">Galerie</a></li>
+                                <li><a class="dropdown-item" href="desprenoi/lsfetc.html">LSFETc</a></li>
+                                <li><a class="dropdown-item" href="desprenoi/bc.html">Bc+Cc</a></li>
+                                <li><a class="dropdown-item" href="desprenoi/departamente.html">Departamente</a></li>
+                                <li><a class="dropdown-item" href="desprenoi/galerie.html">Galerie</a></li>
                             </ul>
                         </li>
-                        <!-- Proiecte Dropdown -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="proiecteDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Proiecte
@@ -56,26 +394,22 @@
                                 <li><a class="dropdown-item" href="#">NEW</a></li>
                             </ul>
                         </li>
-                        <!-- Anunțuri -->
-                        <li class="nav-item"><a class="nav-link" href="../anunturi.html">Anunțuri</a></li>
-                        <!-- Informații Utile Dropdown -->
+                        <li class="nav-item"><a class="nav-link" href="anunturi.html">Anunțuri</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Informații utile
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="infoDropdown">
-                                <li><a class="dropdown-item" href="../informatii/blog.html">Blog</a></li>
-                                <li><a class="dropdown-item" href="../informatii/studentii.html">Studenții Reprezentanți</a></li>
-                                <li><a class="dropdown-item" href="../informatii/documente.html">Documente</a></li>
-                                <li><a class="dropdown-item" href="../informatii/proiectevechi.html">Proiecte Vechi</a></li>
+                                <li><a class="dropdown-item" href="informatii/blog.html">Blog</a></li>
+                                <li><a class="dropdown-item" href="informatii/studentii.html">Studenții Reprezentanți</a></li>
+                                <li><a class="dropdown-item" href="informatii/documente.html">Documente</a></li>
+                                <li><a class="dropdown-item" href="informatii/proiectevechi.html">Proiecte Vechi</a></li>
                             </ul>
                         </li>
-                        <!-- FAQ -->
-                        <li class="nav-item"><a class="nav-link" href="../faq.html">FAQ</a></li>
-                        <!-- Button -->
+                        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
                         <li class="nav-item header-button-mobile-hidden">
                             <a href="https://forms.office.com/pages/responsepage.aspx?id=5B-0a6NAEEq2zTgnjniyGnmD2U03SgVHiVq-MjlrkaxUQjNNMEJTTUU3VUg1MDdNVEM4SFdTRzQ4MC4u&route=shorturl" class="header-button">
-                                <img src="../imagini/button.png" alt="Button" class="button-img">
+                                <img src="imagini/button.png" alt="Button" class="button-img">
                             </a>
                         </li>
                     </ul>
@@ -84,70 +418,87 @@
         </nav>
     </header>
 
-    <body>
+    <div class="container my-5">
+        <h1 class="text-center fw-bold mb-5">Documente</h1>
 
-        <h1 class="text-center fw-bold mb-4">Documente</h1>
-      
-        <div class="row">
-          <div class="col-md-4">
-            <h2 class="section-title">Regulamente UPT</h2>
-            <a href="#" class="doc-button">Carta UPT</a>
-            <a href="#" class="doc-button">Codul de etică și deotologie</a>
-            <a href="#" class="doc-button">Codul drepturilor și obligațiilor studentului UPT</a>
-            <a href="#" class="doc-button"></a>
-          </div>
-      
-          <div class="col-md-4">
-            <h2 class="section-title invisible">Spacer</h2>
-            <a href="#" class="doc-button">Regulament Licență</a>
-            <a href="#" class="doc-button">Regulament Consiliul Facultății</a>
-            <a href="#" class="doc-button">Regulament alegeri studenți reprezentanți</a>
-            <a href="#" class="doc-button"></a>
-          </div>
-      
-          <div class="col-md-4">
-            <h2 class="section-title invisible">Spacer</h2>
-            <a href="#" class="doc-button">Regulament Master</a>
-            <a href="#" class="doc-button">Regulament Senat</a>
-            <a href="#" class="doc-button">Regulament Burse</a>
-            <a href="#" class="doc-button"></a>
-          </div>
-        </div>
-      
-        <div class="row mt-5">
-          <div class="col-12">
-            <h2 class="section-title">Documente LSFETc</h2>
-          </div>
-          <div class="col-md-6">
-            <a href="#" class="doc-button">Raport CDOS 2024</a>
-          </div>
-          <div class="col-md-6">
-            <a href="#" class="doc-button">Raport Masa Rotundă 2024<br><small>-semestrul I-</small></a>
-          </div>
-        </div>
-      
-      </body>
-    <footer class="footer">
-        <div class="footer-logo-container">
-            <img src="../imagini/logo-white.png" alt="LIGA ETc Logo" class="footer-logo">
-            <div class="footer-social-icons">
-                <a href="https://www.facebook.com" target="_blank">
-                    <img src="../imagini/facebook-icon.png" alt="Facebook" class="social-icon">
-                </a>
-                <a href="https://www.instagram.com" target="_blank">
-                    <img src="../imagini/instagram-icon.png" alt="Instagram" class="social-icon">
-                </a>
-                <a href="https://www.tiktok.com" target="_blank">
-                    <img src="../imagini/tiktok-icon.png" alt="TikTok" class="social-icon">
-                </a>
-                <a href="mailto:contact@example.com">
-                    <img src="../imagini/email-icon.png" alt="Email" class="social-icon">
-                </a>
+        <div class="row g-4">
+            <div class="col-12">
+                <h2 class="section-title">Regulamente UPT</h2>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="#" class="doc-button">Carta UPT</a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="#" class="doc-button">Regulament Licență</a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="#" class="doc-button">Regulament Master</a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="#" class="doc-button">Codul de etică și deontologie</a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="#" class="doc-button">Regulament Consiliul Facultății</a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="#" class="doc-button">Regulament Senat</a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="#" class="doc-button">Codul drepturilor și obligațiilor studentului UPT</a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="#" class="doc-button">Regulament alegeri <br> studenți reprezentanți</a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="#" class="doc-button">Regulament <br> Burse</a>
             </div>
         </div>
-        <div class="footer-links">
-            <p><a href="../contact.html">Contact</a></p>
-            <p><a href="#">Donează 3.5</a></p>
+
+        <div class="row g-4 mt-5">
+            <div class="col-12">
+                <h2 class="section-title">Documente LSFETc</h2>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <a href="#" class="doc-button">Raport CDOS <br> 2024 </a>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <a href="#" class="doc-button">Raport Masa Rotundă 2024<br><small>semestrul I</small></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo-container">
+                    <img src="imagini/logo-white.png" alt="LIGA ETc Logo" class="footer-logo">
+                    <div class="footer-social-icons">
+                        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="mailto:contact@example.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Liga ETc</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Donează 3.5%</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Liga ETc. Toate drepturile rezervate.</p>
+            </div>
         </div>
     </footer>
 
